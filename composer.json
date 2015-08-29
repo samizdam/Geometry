@@ -1,0 +1,22 @@
+{
+    "name": "samizdam/geometry",
+    "description": "Geometry Toolkit.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "4.7.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "samizdam",
+            "email": "samizdam@inbox.ru"
+        }
+    ],
+    "require": {},
+    "autoload":
+    	{
+    		"psr-4": {
+    			"samizdam\\Geometry\\": ["src/", "tests/"]
+    		}
+    	}
+}
