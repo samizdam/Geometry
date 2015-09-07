@@ -4,14 +4,6 @@ namespace samizdam\Geometry\Plane;
 class Polygon extends AbstractPolygon
 {
 
-    /**
-     * TODO extract Triangle class
-     * (non-PHPdoc)
-     *
-     * @see \samizdam\Geometry\Plane\PolygonInterface::getArea()
-     *
-     * @return number
-     */
     public function getArea()
     {
         $result = 0;
