@@ -1,7 +1,8 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Lines;
 
 use samizdam\Geometry\UnitTestCase;
+use samizdam\Geometry\Plane\Point;
 
 class LineSegmentTest extends UnitTestCase
 {

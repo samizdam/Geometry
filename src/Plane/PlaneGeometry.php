@@ -2,6 +2,7 @@
 namespace samizdam\Geometry\Plane;
 
 use samizdam\Geometry\Constants;
+use samizdam\Geometry\Plane\Lines\LineSegment;
 
 /**
  * Facade for this package.

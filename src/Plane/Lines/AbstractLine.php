@@ -1,5 +1,7 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Lines;
+
+use samizdam\Geometry\Plane\PointInterface;
 
 abstract class AbstractLine
 {
