@@ -4,7 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- Implement wrappers for all calculation to optional using bc_math, GMP or another extentions.  
+- Implement wrappers for all calculation to optional using bc_math, GMP or another extentions.
+- Extract calculation from Entities to Strategies.    
 - Solid package.
 - Plane\ShapeInterface. 
 - Implement library Facade. 
@@ -19,7 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Library Facade: samizdam\Geometry\Plane\PlaneGeometry. 
 - Constants container. 
 - Angle sub-package: Angle class. 
-- Split Plane entities by sub-packages.
+- Split Plane entities to sub-packages.
 - Use PI configurable constant. 
 
 ### Changed
@@ -28,4 +29,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - A few primitives and simple shapes with basic functionality: Point, Line, Raw, Circle, Triangle, Polygon. 
 - Unit tests for full coverage. 
-
