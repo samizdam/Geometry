@@ -1,6 +1,8 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
+use samizdam\Geometry\Constants;
+
 class Circle
 {
 
@@ -26,7 +28,7 @@ class Circle
 
     public function getLength()
     {
-        return 2 * $this->R * pi();
+        return 2 * $this->R * Constants::π;
     }
 
     public function getArea()

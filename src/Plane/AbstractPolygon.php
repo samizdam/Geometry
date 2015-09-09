@@ -11,7 +11,7 @@ abstract class AbstractPolygon implements PolygonInterface
         $this->points = $points;
     }
 
-    static public function createByPoints(array $points)
+    public static function createByPoints(array $points)
     {
         if (count($points) === 3) {
             $polygon = new Triangle($points);

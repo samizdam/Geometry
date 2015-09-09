@@ -8,10 +8,21 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Solid package.
 - Plane\ShapeInterface.
 - Split Plane entities by sub-packages. 
-- Implement library Gateway. 
+- Implement library Facade. 
+- Add support for proxing via external Gateway over interfaces?  
+- Implement configuration for units, precision etc. 
+- Use PI configurable constant. 
 
 ### Changed
 - Rename unit test super class to GeometryUnitTestCase. 
+
+## 0.0.2 - 2015-09-07
+### Added
+- Library Facade: samizdam\Geometry\Plane\PlaneGeometry. 
+- Constants container. 
+- Angle sub-package: Angle class.  
+
+### Changed
 
 ## 0.0.1 - 2015-09-07
 ### Added
