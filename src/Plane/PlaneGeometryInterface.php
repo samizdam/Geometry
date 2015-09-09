@@ -15,8 +15,8 @@ interface PlaneGeometryInterface
     /**
      * Create new Polygon
      *
-     * @param PointInterface[] $points
-     * @return PolygonInterface
+     * @param Polygons\PointInterface[] $points
+     * @return Polygons\PolygonInterface
      */
     public function createPolygonByPoints(array $points);
 

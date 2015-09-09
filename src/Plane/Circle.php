@@ -33,6 +33,6 @@ class Circle
 
     public function getArea()
     {
-        return pi() * pow($this->R, 2);
+        return Constants::π * pow($this->R, 2);
     }
 }

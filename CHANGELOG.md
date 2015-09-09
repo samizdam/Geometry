@@ -6,12 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Implement wrappers for all calculation to optional using bc_math, GMP or another extentions.  
 - Solid package.
-- Plane\ShapeInterface.
-- Split Plane entities by sub-packages. 
+- Plane\ShapeInterface. 
 - Implement library Facade. 
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc. 
-- Use PI configurable constant. 
 
 ### Changed
 - Rename unit test super class to GeometryUnitTestCase. 
@@ -20,7 +18,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Library Facade: samizdam\Geometry\Plane\PlaneGeometry. 
 - Constants container. 
-- Angle sub-package: Angle class.  
+- Angle sub-package: Angle class. 
+- Split Plane entities by sub-packages.
+- Use PI configurable constant. 
 
 ### Changed
 

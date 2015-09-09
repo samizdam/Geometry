@@ -1,7 +1,7 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Polygons;
 
-class Polygon extends AbstractPolygon
+class Triangle extends AbstractPolygon
 {
 
     public function getArea()
@@ -12,7 +12,7 @@ class Polygon extends AbstractPolygon
             $y1 = $this->points[$i]->getY();
             $x2 = $this->points[$i + 1]->getX();
             $y2 = $this->points[$i + 1]->getY();
-            $result += ($x1 + $x2) * ($y1 - $y2);
+            $result += ($x1 * $y2) - ($y1 * $x2);
         }
         return abs($result) / 2;
     }

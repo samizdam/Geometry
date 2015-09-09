@@ -1,5 +1,5 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Polygons;
 
 interface PolygonInterface
 {
