@@ -15,23 +15,26 @@ use samizdam\Geometry\Plane\Polygons\AbstractPolygon;
 class PlaneGeometry implements PlaneGeometryInterface
 {
 
-    private static $instance;
+    private $constants;
 
-    private function __construct()
-    {}
+    private $calculationStrategiesCollection;
 
-    public static function getInstance()
+    private $factoriesCollection;
+
+    public function __construct(FactoriesCollectionInterface $factoryCollection = null, CalculationStrategiesCollectionInterface $calculationStrategiesCollection = null, Constants $constants = null)
     {
-        return self::$instance ?  : self::$instance = new self();
+        $this->constants = $constants ?  : new Constants();
+        $this->calculationStrategiesCollection = $calculationStrategiesCollection ?  : new CalculationStrategiesCollection();
+        $this->factoriesCollection = $factoryCollection ?  : new FactoriesCollection();
     }
 
     public function createPolygonByPoints(array $points)
     {
-        return AbstractPolygon::createByPoints($points);
+        return $this->factoriesCollection->getPolygonFactory()->createPolygonByPoints($points);
     }
 
     public function createLineSegment(PointInterface $A, PointInterface $B)
     {
-        return new LineSegment($A, $B);
+        return $this->factoriesCollection->getLineFactory()->createLineSegment($A, $B);
     }
 }

@@ -18,7 +18,7 @@ class LineSegmentTest extends GeometryUnitTestCase
         $pointA = new Point(0, 0);
         $pointB = new Point(1, 1);
         $line = new LineSegment($pointA, $pointB);
-        $this->assertEquals($pointA, $line->getPointA());
-        $this->assertEquals($pointB, $line->getPointB());
+        $this->assertEquals($pointA, $line->getFirstPoint());
+        $this->assertEquals($pointB, $line->getLastPoint());
     }
 }

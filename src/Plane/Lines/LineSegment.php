@@ -1,15 +1,15 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
-class LineSegment extends AbstractLine
+class LineSegment extends AbstractLine implements LineSegmentInterface
 {
 
-    public function getPointA()
+    public function getFirstPoint()
     {
         return $this->pointA;
     }
 
-    public function getPointB()
+    public function getLastPoint()
     {
         return $this->pointB;
     }
