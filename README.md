@@ -11,7 +11,7 @@ Some geometry stuff, extracted from my other projects.
 
 ### Contribution guidelines ###
 
-100% code coverage via phpunit included. Some times... 
+100% code coverage via phpunit included. Sometimes... 
 
 ### Roadmap ###
 
