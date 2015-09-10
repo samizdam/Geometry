@@ -11,11 +11,11 @@ Some geometry stuff, extracted from my other projects.
 
 ### Contribution guidelines ###
 
-100% code coverage via phpunit included. 
+100% code coverage via phpunit included. Some times... 
 
 ### Roadmap ###
 
 * Implement other basic shapes
 * Add computing features for existing shapes and primitives  
 * Implement default Gateway for use in existing projects
-* In next major version: add Solid Package =) 
+* In next major version: add Solid Package =)
