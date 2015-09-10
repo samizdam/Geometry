@@ -1,9 +1,9 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
-use samizdam\Geometry\UnitTestCase;
+use samizdam\Geometry\GeometryUnitTestCase;
 
-class PlaneGeometryTest extends UnitTestCase
+class PlaneGeometryTest extends GeometryUnitTestCase
 {
 
     public function testCreatePolygonByPoints()

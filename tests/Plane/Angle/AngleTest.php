@@ -1,10 +1,10 @@
 <?php
 namespace samizdam\Geometry\Plane\Angle;
 
-use samizdam\Geometry\UnitTestCase;
+use samizdam\Geometry\GeometryUnitTestCase;
 use samizdam\Geometry\Plane\Point;
 
-class AngleTest extends UnitTestCase
+class AngleTest extends GeometryUnitTestCase
 {
 
     public function testGetSize()

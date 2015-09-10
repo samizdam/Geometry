@@ -10,10 +10,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Plane\ShapeInterface. 
 - Implement library Facade. 
 - Add support for proxing via external Gateway over interfaces?  
-- Implement configuration for units, precision etc. 
+- Implement configuration for units, precision etc.  
 
+## 0.1.1
 ### Changed
-- Rename unit test super class to GeometryUnitTestCase. 
+- Rename unit test super class to GeometryUnitTestCase.
 
 ## 0.1.0 - 2015-09-10
 ### Added

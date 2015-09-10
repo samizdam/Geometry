@@ -1,9 +1,9 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
-use samizdam\Geometry\UnitTestCase;
+use samizdam\Geometry\GeometryUnitTestCase;
 
-class CircleTest extends UnitTestCase
+class CircleTest extends GeometryUnitTestCase
 {
 
     public function testGetLength()

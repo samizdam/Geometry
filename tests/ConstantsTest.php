@@ -6,7 +6,7 @@ namespace samizdam\Geometry;
  * @author samizdam
  *        
  */
-class ConstantsTest extends UnitTestCase
+class ConstantsTest extends GeometryUnitTestCase
 {
 
     /**

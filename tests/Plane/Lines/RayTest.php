@@ -1,10 +1,10 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
-use samizdam\Geometry\UnitTestCase;
+use samizdam\Geometry\GeometryUnitTestCase;
 use samizdam\Geometry\Plane\Point;
 
-class RayTest extends UnitTestCase
+class RayTest extends GeometryUnitTestCase
 {
 
     public function testGetPointA()
