@@ -33,6 +33,11 @@ class PlaneGeometry implements PlaneGeometryInterface
         return $this->factoriesCollection->getPolygonFactory()->createPolygonByPoints($points);
     }
 
+    public function createLine(PointInterface $A, PointInterface $B)
+    {
+        return $this->factoriesCollection->getLineFactory()->createLine($A, $B);
+    }
+
     public function createLineSegment(PointInterface $A, PointInterface $B)
     {
         return $this->factoriesCollection->getLineFactory()->createLineSegment($A, $B);

@@ -25,7 +25,15 @@ interface PlaneGeometryInterface
      *
      * @param PointInterface $A
      * @param PointInterface $B
-     * @return Lines\LineSegment
+     * @return Lines\LineSegmentInterface
      */
     public function createLineSegment(PointInterface $A, PointInterface $B);
+    
+    /**
+     * 
+     * @param PointInterface $A
+     * @param PointInterface $B
+     * @return Lines\LineInteface
+     */
+    public function createLine(PointInterface $A, PointInterface $B);
 }
