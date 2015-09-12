@@ -3,6 +3,8 @@ namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\PlaneGeometry;
+use samizdam\Geometry\Plane\CalculationStrategiesAwareTrait;
+use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 
 /**
  *
@@ -11,6 +13,8 @@ use samizdam\Geometry\Plane\PlaneGeometry;
  */
 class Angle implements AngleInterface
 {
+    use FactoriesCollectionAwareTrait;
+    use CalculationStrategiesAwareTrait;
 
     /**
      *
@@ -20,7 +24,7 @@ class Angle implements AngleInterface
 
     /**
      * Second point is Vertex of Angle
-     * 
+     *
      * @param PointInterface $A
      * @param PointInterface $B
      * @param PointInterface $C
@@ -32,39 +36,25 @@ class Angle implements AngleInterface
         $this->C = $C;
     }
 
+    public function getFirstVector()
+    {
+        return $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegment($this->B, $this->A);
+    }
+
+    public function getLastVector()
+    {
+        return $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegment($this->B, $this->C);
+    }
+
     public function getSize()
     {
-        $BA = PlaneGeometry::getInstance()->createLineSegment($this->B, $this->A);
-        $BC = PlaneGeometry::getInstance()->createLineSegment($this->B, $this->C);
-        
-        $Ax = $this->A->getX();
-        $Ay = $this->A->getY();
-        
-        $Bx = $this->B->getX();
-        $By = $this->B->getY();
-        
-        $Cx = $this->C->getX();
-        $Cy = $this->C->getY();
-        
-        $coordSumBAx = ($Ax - $Bx);
-        $coordSumBAy = ($Ay - $By);
-        
-        $coordSumBCx = ($Cx - $Bx);
-        $coordSumBCy = ($Cy - $By);
-        
-        $x1 = $coordSumBCx;
-        $x2 = $coordSumBAx;
-        $y1 = $coordSumBCy;
-        $y2 = $coordSumBAy;
-        
-        $rads = atan2($x1 * $y2 - $y1 * $x2, $x1 * $x2 + $y1 * $y2);
-        
-        $res = rad2deg($rads);
-        
-        if ($res < 0) {
-            $res = $res + 360;
-        }
-        return $res;
+        return $this->getCalculationStrategiesCollection()
+            ->getStrategy(AngleSizeCalculationStrategyInterface::class)
+            ->getAngleSize($this);
     }
 
     public function getVertexPoint()

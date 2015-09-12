@@ -1,10 +1,10 @@
 <?php
 namespace samizdam\Geometry\Plane\Polygons;
 
-use samizdam\Geometry\UnitTestCase;
+use samizdam\Geometry\GeometryUnitTestCase;
 use samizdam\Geometry\Plane\Point;
 
-class TriangleTest extends UnitTestCase
+class TriangleTest extends GeometryUnitTestCase
 {
 
     public function testGetArea()

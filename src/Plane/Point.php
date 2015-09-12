@@ -1,6 +1,11 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
+/**
+ * 
+ * @author samizdam
+ *
+ */
 class Point implements PointInterface
 {
 

@@ -2,18 +2,15 @@
 namespace samizdam\Geometry;
 
 /**
- * You can define and you own class named G
+ * You can define you own class with overriden constants and set is than in PlaneGeometry constructor
+ * 
+ * @author samizdam
+ *        
  */
-
-// @codeCoverageIgnoreStart
-if (! class_exists(Constants::class, true)) {
-
+class Constants
+{
     /**
-     *
-     * @author samizdam
+     * @var float
      */
-    abstract class Constants extends DefaultConstants
-    {
-    }
+    const π = M_PI;
 }
-// @codeCoverageIgnoreEnd
