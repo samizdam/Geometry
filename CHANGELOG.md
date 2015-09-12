@@ -21,12 +21,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.2.1 - 2015-XX-XX
 ### Change 
 - Rename calcalation classes. KISS =)
+- Rename Ray::getPointA() to getFirstPoint(). 
 
 ### Added
 - AngleSizeUnit classes. 
 - AngleFactory classes. 
-- LineInterface interface.
-
+- LineInterface.
+- RayInterface.
 
 ## 0.2.0 - 2015-09-11
 ### Added
