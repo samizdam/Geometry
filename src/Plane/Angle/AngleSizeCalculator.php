@@ -8,7 +8,7 @@ use samizdam\Geometry\Plane\ConstantsAwareTrait;
  * @author samizdam
  *        
  */
-class AngleSizeCalculationStrategy implements AngleSizeCalculationStrategyInterface
+class AngleSizeCalculator implements AngleSizeCalculatorInterface
 {
     
     use ConstantsAwareTrait;

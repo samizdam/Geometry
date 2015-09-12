@@ -1,7 +1,7 @@
 <?php
 namespace samizdam\Geometry\Plane\Angle;
 
-interface AngleSizeCalculationStrategyInterface
+interface AngleSizeCalculatorInterface
 {
     
     public function getAngleSize(AngleInterface $angle);

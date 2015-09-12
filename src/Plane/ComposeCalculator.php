@@ -14,7 +14,7 @@ class ComposeCalculator implements ComposeCalculatorInterface
     use ConstantsAwareTrait;
 
     private $classMap = [
-        Angle\AngleSizeCalculationStrategyInterface::class => Angle\AngleSizeCalculationStrategy::class
+        Angle\AngleSizeCalculatorInterface::class => Angle\AngleSizeCalculator::class
     ];
 
     private $objectPool;
