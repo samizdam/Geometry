@@ -3,7 +3,7 @@ namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\PlaneGeometry;
-use samizdam\Geometry\Plane\CalculationStrategiesAwareTrait;
+use samizdam\Geometry\Plane\CalculatorAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 
 /**
@@ -14,7 +14,7 @@ use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 class Angle implements AngleInterface
 {
     use FactoriesCollectionAwareTrait;
-    use CalculationStrategiesAwareTrait;
+    use CalculatorAwareTrait;
 
     /**
      *
@@ -52,7 +52,7 @@ class Angle implements AngleInterface
 
     public function getSize()
     {
-        return $this->getCalculationStrategiesCollection()
+        return $this->getComposeCalculator()
             ->getStrategy(AngleSizeCalculationStrategyInterface::class)
             ->getAngleSize($this);
     }

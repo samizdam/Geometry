@@ -18,6 +18,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Up testing coverage to 100%.  
 
+## 0.2.1 - 2015-XX-XX
+### Change 
+- Rename calcalation classes. KISS =)
+ 
+
+
 ## 0.2.0 - 2015-09-11
 ### Added
 - Service locators for calculation strategies and shapes factories. 

@@ -9,7 +9,7 @@ use samizdam\Geometry\Plane\Angle;
  * @author samizdam
  *        
  */
-class CalculationStrategiesCollection implements CalculationStrategiesCollectionInterface
+class ComposeCalculator implements ComposeCalculatorInterface
 {
     use ConstantsAwareTrait;
 
