@@ -38,6 +38,11 @@ class PlaneGeometry implements PlaneGeometryInterface
         return $this->factoriesCollection->getLineFactory()->createLine($A, $B);
     }
 
+    public function createRay(PointInterface $pointA, PointInterface $pointB)
+    {
+        return $this->factoriesCollection->getLineFactory()->createRay($pointA, $pointB);
+    }
+
     public function createLineSegment(PointInterface $A, PointInterface $B)
     {
         return $this->factoriesCollection->getLineFactory()->createLineSegment($A, $B);

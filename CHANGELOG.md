@@ -25,7 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - AngleSizeUnit classes. 
 - AngleFactory classes. 
- 
+- LineInterface interface.
 
 
 ## 0.2.0 - 2015-09-11

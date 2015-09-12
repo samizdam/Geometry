@@ -25,4 +25,10 @@ class PlaneGeometryTest extends GeometryUnitTestCase
         $facade = new PlaneGeometry();
         $this->assertInstanceOf(Polygons\PolygonInterface::class, $facade->createPolygonByPoints([]));
     }
+
+    public function testCreateRay()
+    {
+        $facade = new PlaneGeometry();
+        $this->assertInstanceOf(Lines\RayInterface::class, $facade->createRay(new Point(0, 0), new Point(1, 1)));
+    }
 }
