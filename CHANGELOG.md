@@ -22,6 +22,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Change 
 - Rename calcalation classes. KISS =)
 
+### Added
+- AngleSizeUnit classes. 
+- AngleFactory classes. 
  
 
 
