@@ -2,16 +2,16 @@
 namespace samizdam\Geometry\Plane;
 
 use samizdam\Geometry\GeometryUnitTestCase;
+use samizdam\Geometry\Plane\Polygons\PolygonInterface;
 
 class PlaneGeometryTest extends GeometryUnitTestCase
 {
 
     public function testCreatePolygonByPoints()
     {
-//         PlaneGeometry::getInstance()->createPolygonByPoints([
-//             new Point(0, 0),
-//             new Point(1, 1),
-//             new Point(10, 0)
-//         ]);
+        $facade = new PlaneGeometry();
+        $this->assertInstanceOf(PolygonInterface::class, $facade->createPolygonByPoints([]));
     }
+    
+//     public function 
 }
