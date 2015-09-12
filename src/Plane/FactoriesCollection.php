@@ -5,6 +5,8 @@ use samizdam\Geometry\Plane\Polygons\PolygonFactoryInterface;
 use samizdam\Geometry\Plane\Polygons\PolygonFactory;
 use samizdam\Geometry\Plane\Lines\LineFactoryInterface;
 use samizdam\Geometry\Plane\Lines\LineFactory;
+use samizdam\Geometry\Plane\Angle\AngleFactoryInterface;
+use samizdam\Geometry\Plane\Angle\AngleFactory;
 
 /**
  *
@@ -17,6 +19,7 @@ class FactoriesCollection implements FactoriesCollectionInterface
     private $objectPool;
 
     private $classMap = [
+        AngleFactoryInterface::class => AngleFactory::class,
         PolygonFactoryInterface::class => PolygonFactory::class,
         LineFactoryInterface::class => LineFactory::class
     ];
@@ -44,6 +47,11 @@ class FactoriesCollection implements FactoriesCollectionInterface
         } else {
             throw new \InvalidArgumentException("{$factoryClassName} must implement {$interface}.");
         }
+    }
+
+    public function getAngleFactory()
+    {
+        return $this->getFactory(AngleFactoryInterface::class);
     }
 
     public function getPolygonFactory()

@@ -2,6 +2,7 @@
 namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\Plane\ConstantsAwareTrait;
+use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 
 /**
  *
@@ -12,6 +13,19 @@ class AngleSizeCalculator implements AngleSizeCalculatorInterface
 {
     
     use ConstantsAwareTrait;
+    use FactoriesCollectionAwareTrait;
+
+    private $angleSizeUnit;
+
+    public function setAngleSizeUnit(AngleSizeUnitsEnum $unit)
+    {
+        $this->angleSizeUnit = $unit;
+    }
+
+    public function getAngleSizeUnit()
+    {
+        return $this->angleSizeUnit ?  : $this->angleSizeUnit = $this->getFactoriesCollection()->getAngleFactory()->getDefaultUnit();
+    }
 
     public function getAngleSize(AngleInterface $angle)
     {
