@@ -1,0 +1,6 @@
+# language setting
+language: php 
+
+# version numbers, testing against two versions of node
+php:
+    - 5.6
