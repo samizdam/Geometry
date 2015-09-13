@@ -16,6 +16,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Normalize naming of arguments, fields and methods. To fix in some guideline.  
 - Extract Circle calculations. 
 
+## 0.3.1 - 2015-09-XX
+
+
 ## 0.3.1 - 2015-09-13
 ### Added 
 - LengthCalculator classes. 

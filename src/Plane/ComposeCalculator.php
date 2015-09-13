@@ -1,8 +1,6 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
-use samizdam\Geometry\Plane\Angle;
-use samizdam\Geometry\Plane\Lines;
 use samizdam\Geometry\Exceptions;
 
 /**
@@ -15,7 +13,8 @@ class ComposeCalculator implements ComposeCalculatorInterface
 
     private $classMap = [
         Angle\AngleSizeCalculatorInterface::class => Angle\AngleSizeCalculator::class,
-        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class
+        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class,
+        Curves\CircleCalculatorInterface::class => Curves\CircleCalculator::class
     ];
 
     private $objectPool;

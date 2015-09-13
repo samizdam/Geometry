@@ -3,14 +3,17 @@ namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\CalculatorAwareTrait;
 
 /**
- * 
- * @author samizdam
  *
+ * @author samizdam
+ *        
  */
-class Circle
+class Circle implements CircleInterface
 {
+    
+    use CalculatorAwareTrait;
 
     private $pointO;
 
@@ -39,7 +42,8 @@ class Circle
 
     public function getArea()
     {
-        
-        return Constants::π * pow($this->R, 2);
+        return $this->getComposeCalculator()
+            ->getCalculator(CircleCalculatorInterface::class)
+            ->getArea($this);
     }
 }
