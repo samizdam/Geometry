@@ -9,6 +9,8 @@ before_script:
   - /home/shippable/.phpenv/versions/5.6/composer/composer.phar self-update
   - composer install
   - cd tests
+  - mkdir -p shippable/codecoverage
+  - mkdir -p shippable/testresults
 
 script:
-  - phpunit .
+   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage .
