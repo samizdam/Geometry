@@ -1,7 +1,7 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
-interface LineSegmentInterface
+interface LineSegmentInterface extends LineInterface
 {
     public function getFirstPoint();
     

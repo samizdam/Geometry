@@ -3,7 +3,9 @@ namespace samizdam\Geometry\Plane;
 
 use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\Angle;
-use samizdam\Geometry\Exceptions as Exceptions;
+use samizdam\Geometry\Plane\Lines;
+use samizdam\Geometry\Exceptions;
+
 /**
  *
  * @author samizdam
@@ -14,7 +16,8 @@ class ComposeCalculator implements ComposeCalculatorInterface
     use ConstantsAwareTrait;
 
     private $classMap = [
-        Angle\AngleSizeCalculatorInterface::class => Angle\AngleSizeCalculator::class
+        Angle\AngleSizeCalculatorInterface::class => Angle\AngleSizeCalculator::class,
+        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class
     ];
 
     private $objectPool;
@@ -26,7 +29,7 @@ class ComposeCalculator implements ComposeCalculatorInterface
 
     public function getCalculator($interface)
     {
-        if (!$this->objectPool->offsetExists($interface) && isset($this->classMap[$interface])) {
+        if (! $this->objectPool->offsetExists($interface) && isset($this->classMap[$interface])) {
             $this->setCalculator($interface, $this->classMap[$interface]);
         } else {
             throw new Exceptions\OutOfBoundsException("Unknow calculator interface {$interface}");
@@ -39,7 +42,9 @@ class ComposeCalculator implements ComposeCalculatorInterface
         $calculatorInstance = new $calculatorClassName();
         
         if ($calculatorInstance instanceof $interface) {
-            $calculatorInstance->setConstants($this->getConstants());
+            if ($calculatorInstance instanceof ConstantsAwareInterface) {
+                $calculatorInstance->setConstants($this->getConstants());
+            }
             $this->objectPool->offsetSet($interface, $calculatorInstance);
         } else {
             throw new Exceptions\InvalidArgumentException("{$calculatorClassName} must implement {$interface}.");

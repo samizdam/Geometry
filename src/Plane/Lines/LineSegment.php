@@ -1,8 +1,12 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
+use samizdam\Geometry\Plane\CalculatorAwareTrait;
+
 class LineSegment extends AbstractLine implements LineSegmentInterface
 {
+    
+    use CalculatorAwareTrait;
 
     public function getFirstPoint()
     {
@@ -16,10 +20,6 @@ class LineSegment extends AbstractLine implements LineSegmentInterface
 
     public function getLength()
     {
-        $Ax = $this->pointA->getX();
-        $Ay = $this->pointA->getY();
-        $Bx = $this->pointB->getX();
-        $By = $this->pointB->getY();
-        return sqrt(pow(($Bx - $Ax), 2) + pow(($By - $Ay), 2));
+        return $this->getComposeCalculator()->getCalculator(LengthCalculatorInterface::class)->getSegmentLength($this);
     }
 }
