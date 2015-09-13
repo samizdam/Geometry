@@ -11,7 +11,7 @@ use samizdam\Geometry\Constants;
 interface ComposeCalculatorInterface extends ConstantsAwareInterface
 {
 
-    public function getStrategy($interface);
+    public function getCalculator($interface);
 
-    public function setStrategy($interface, $strategy);
+    public function setCalculator($interface, $calculator);
 }

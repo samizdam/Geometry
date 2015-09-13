@@ -53,7 +53,7 @@ class Angle implements AngleInterface
     public function getSize()
     {
         return $this->getComposeCalculator()
-            ->getStrategy(AngleSizeCalculatorInterface::class)
+            ->getCalculator(AngleSizeCalculatorInterface::class)
             ->getAngleSize($this);
     }
 

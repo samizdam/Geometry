@@ -3,7 +3,7 @@ namespace samizdam\Geometry\Plane;
 
 use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\Angle;
-
+use samizdam\Geometry\Exceptions as Exceptions;
 /**
  *
  * @author samizdam
@@ -24,25 +24,25 @@ class ComposeCalculator implements ComposeCalculatorInterface
         $this->objectPool = new \ArrayObject();
     }
 
-    public function getStrategy($interface)
+    public function getCalculator($interface)
     {
         if (!$this->objectPool->offsetExists($interface) && isset($this->classMap[$interface])) {
-            $this->setStrategy($interface, $this->classMap[$interface]);
+            $this->setCalculator($interface, $this->classMap[$interface]);
         } else {
-            throw new \OutOfBoundsException("Unknow strategy interface {$interface}");
+            throw new Exceptions\OutOfBoundsException("Unknow calculator interface {$interface}");
         }
         return $this->objectPool->offsetGet($interface);
     }
 
-    public function setStrategy($interface, $strategyClassName)
+    public function setCalculator($interface, $calculatorClassName)
     {
-        $strategyInstance = new $strategyClassName();
+        $calculatorInstance = new $calculatorClassName();
         
-        if ($strategyInstance instanceof $interface) {
-            $strategyInstance->setConstants($this->getConstants());
-            $this->objectPool->offsetSet($interface, $strategyInstance);
+        if ($calculatorInstance instanceof $interface) {
+            $calculatorInstance->setConstants($this->getConstants());
+            $this->objectPool->offsetSet($interface, $calculatorInstance);
         } else {
-            throw new \InvalidArgumentException("{$strategyClassName} must implement {$interface}.");
+            throw new Exceptions\InvalidArgumentException("{$calculatorClassName} must implement {$interface}.");
         }
     }
 }

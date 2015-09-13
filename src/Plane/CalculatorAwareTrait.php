@@ -4,15 +4,15 @@ namespace samizdam\Geometry\Plane;
 trait CalculatorAwareTrait
 {
 
-    private $strategiesCollection;
+    private $compositeCalculator;
     
     public function getComposeCalculator()
     {
-        return $this->strategiesCollection ? : $this->strategiesCollection = new ComposeCalculator();
+        return $this->compositeCalculator ? : $this->compositeCalculator = new ComposeCalculator();
     }
     
-    public function setComposeCalculator(ComposeCalculatorInterface $collection)
+    public function setComposeCalculator(ComposeCalculatorInterface $calculator)
     {
-        $this->strategiesCollection = $collection;
+        $this->compositeCalculator = $calculator;
     }
 }
