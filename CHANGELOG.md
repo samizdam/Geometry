@@ -15,12 +15,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Normalize naming of arguments, fields and methods. To fix in some guideline.  
 - Extract LineSegment length calculation. 
 
-### Fixed
-- Up testing coverage to 100%.  
-
-## 0.2.1 - 2015-XX-XX
+## 0.3.0 - 2015-09-13
 ### Change 
-- Rename calcalation classes. KISS =)
+- Rename calcalation classes and methods. KISS =)
 - Rename Ray::getPointA() to getFirstPoint(). 
 
 ### Added
@@ -28,6 +25,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - AngleFactory classes. 
 - LineInterface.
 - RayInterface.
+- Exceptions namespace. 
+
+### Fixed
+- Up testing coverage to 100%.  
+
 
 ## 0.2.0 - 2015-09-11
 ### Added
