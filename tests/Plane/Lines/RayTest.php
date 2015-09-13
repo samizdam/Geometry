@@ -12,6 +12,6 @@ class RayTest extends GeometryUnitTestCase
         $pointA = new Point(0, 1);
         $pointB = new Point(1, 1);
         $ray = new Ray($pointA, $pointB);
-        $this->assertEquals($pointA, $ray->getPointA());
+        $this->assertEquals($pointA, $ray->getFirstPoint());
     }
 }

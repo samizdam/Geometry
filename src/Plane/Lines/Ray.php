@@ -1,10 +1,10 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
-class Ray extends AbstractLine
+class Ray extends AbstractLine implements RayInterface
 {
 
-    public function getPointA()
+    public function getFirstPoint()
     {
         return $this->pointA;
     }
