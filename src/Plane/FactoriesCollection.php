@@ -1,12 +1,6 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
-use samizdam\Geometry\Plane\Polygons\PolygonFactoryInterface;
-use samizdam\Geometry\Plane\Polygons\PolygonFactory;
-use samizdam\Geometry\Plane\Lines\LineFactoryInterface;
-use samizdam\Geometry\Plane\Lines\LineFactory;
-use samizdam\Geometry\Plane\Angle\AngleFactoryInterface;
-use samizdam\Geometry\Plane\Angle\AngleFactory;
 use samizdam\Geometry\Exceptions as Exceptions;
 
 /**
@@ -20,9 +14,9 @@ class FactoriesCollection implements FactoriesCollectionInterface
     private $objectPool;
 
     private $classMap = [
-        AngleFactoryInterface::class => AngleFactory::class,
-        PolygonFactoryInterface::class => PolygonFactory::class,
-        LineFactoryInterface::class => LineFactory::class
+        Angle\AngleFactoryInterface::class => Angle\AngleFactory::class,
+        Polygons\PolygonFactoryInterface::class => Polygons\PolygonFactory::class,
+        Lines\LineFactoryInterface::class => Lines\LineFactory::class
     ];
 
     public function __construct(array $classMap = [])
@@ -52,16 +46,16 @@ class FactoriesCollection implements FactoriesCollectionInterface
 
     public function getAngleFactory()
     {
-        return $this->getFactory(AngleFactoryInterface::class);
+        return $this->getFactory(Angle\AngleFactoryInterface::class);
     }
 
     public function getPolygonFactory()
     {
-        return $this->getFactory(PolygonFactoryInterface::class);
+        return $this->getFactory(Polygons\PolygonFactoryInterface::class);
     }
 
     public function getLineFactory()
     {
-        return $this->getFactory(LineFactoryInterface::class);
+        return $this->getFactory(Lines\LineFactoryInterface::class);
     }
 }

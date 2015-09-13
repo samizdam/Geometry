@@ -25,7 +25,7 @@ class Circle implements CircleInterface
         $this->R = (float) $R;
     }
 
-    public function getPointO()
+    public function getCentralPoint()
     {
         return $this->pointO;
     }

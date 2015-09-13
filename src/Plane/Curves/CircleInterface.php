@@ -13,7 +13,7 @@ interface CircleInterface
 
     public function getLength();
 
-    public function getPointO();
+    public function getCentralPoint();
     
     public function getR();
 }

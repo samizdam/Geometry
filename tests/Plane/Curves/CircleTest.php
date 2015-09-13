@@ -21,7 +21,7 @@ class CircleTest extends GeometryUnitTestCase
         $pointO = new Point(0, 0);
         $R = 1;
         $circle = new Circle($pointO, $R);
-        $this->assertEquals($pointO, $circle->getPointO());
+        $this->assertEquals($pointO, $circle->getCentralPoint());
         $this->assertEquals($R, $circle->getR());
     }
 
