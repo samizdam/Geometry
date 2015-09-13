@@ -15,15 +15,21 @@ use samizdam\Geometry\Plane\Polygons\AbstractPolygon;
 class PlaneGeometry implements PlaneGeometryInterface
 {
 
-    private $constants;
-
     private $calculationStrategiesCollection;
 
     private $factoriesCollection;
 
+    /**
+     * You can set overrinding Factory, Calculator or Constants.  
+     * 
+     * Different instances of this Facade can be configure dynamic. Only Contants will be static for in all Application.  
+     * 
+     * @param FactoriesCollectionInterface $factoryCollection
+     * @param ComposeCalculatorInterface $calculationStrategiesCollection
+     * @param Constants $constants
+     */
     public function __construct(FactoriesCollectionInterface $factoryCollection = null, ComposeCalculatorInterface $calculationStrategiesCollection = null, Constants $constants = null)
     {
-        $this->constants = $constants ?  : new Constants();
         $this->calculationStrategiesCollection = $calculationStrategiesCollection ?  : new ComposeCalculator();
         $this->factoriesCollection = $factoryCollection ?  : new FactoriesCollection();
     }

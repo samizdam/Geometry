@@ -1,8 +1,14 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\Constants;
+use samizdam\Geometry\Plane\PointInterface;
 
+/**
+ * 
+ * @author samizdam
+ *
+ */
 class Circle
 {
 
@@ -33,6 +39,7 @@ class Circle
 
     public function getArea()
     {
+        
         return Constants::π * pow($this->R, 2);
     }
 }

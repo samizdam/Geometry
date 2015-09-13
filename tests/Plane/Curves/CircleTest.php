@@ -1,7 +1,8 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\GeometryUnitTestCase;
+use samizdam\Geometry\Plane\Point;
 
 class CircleTest extends GeometryUnitTestCase
 {

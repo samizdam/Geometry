@@ -8,7 +8,7 @@ use samizdam\Geometry\Constants;
  * @author samizdam
  *        
  */
-interface ComposeCalculatorInterface extends ConstantsAwareInterface
+interface ComposeCalculatorInterface
 {
 
     public function getCalculator($interface);

@@ -15,6 +15,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Normalize naming of arguments, fields and methods. To fix in some guideline.  
 - Extract LineSegment length calculation. 
 
+## 0.3.1 - 2015-09-XX
+### Added 
+- LengthCalculator classes. 
+
+### Change 
+- Remove unused trait import from AngleSizeCalculator implementation. 
+
 ## 0.3.0 - 2015-09-13
 ### Change 
 - Rename calcalation classes and methods. KISS =)
