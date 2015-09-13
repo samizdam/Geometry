@@ -10,14 +10,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Implement library Facade. 
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc.
-- CircleInterface  
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.  
-- Extract Circle calculations. 
+- Restore Constant overriding implementation 
 
 ## 0.3.1 - 2015-09-XX
+### Fixed
+- Bug in ComposeCalculator::getCalculator(). 
 
+### Added
+- Circle entity and calculator classes.
 
 ## 0.3.1 - 2015-09-13
 ### Added 
