@@ -2,15 +2,16 @@
 namespace samizdam\Geometry;
 
 /**
- * You can define you own class with overriden constants and set is than in PlaneGeometry constructor
- * 
+ * You can define you own class with overriden constants before PlaneGeometry constructor will be called.
+ *
+ *
  * @author samizdam
  *        
  */
-class Constants
-{
-    /**
-     * @var float
-     */
-    const π = M_PI;
+if (! class_exists(Constants::class)) {
+
+    class Constants extends DefaultConstants
+    {
+
+    }
 }
