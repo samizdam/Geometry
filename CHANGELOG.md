@@ -14,26 +14,31 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.   
 
-## 0.3.1 - 2015-09-XX
+## 0.3.2 - 2015-09-XX
 ### Fixed
 - Bug in ComposeCalculator::getCalculator(). 
 - Restore Constant overriding implementation
 
 ### Added
 - Circle entity and calculator classes.
+- Ellipse entity classes.
+- Factory method for Point. 
+
+### Changed
+- CircleInterface. 
 
 ## 0.3.1 - 2015-09-13
 ### Added 
 - LengthCalculator classes. 
 
-### Change 
+### Changed 
 - Circle class moved to Curves package. 
 
 ### Removed
 - Unused implementation for dymanic Constants: ConstantsAwareInreface and trait.  
 
 ## 0.3.0 - 2015-09-13
-### Change 
+### Changed 
 - Rename calcalation classes and methods. KISS =)
 - Rename Ray::getPointA() to getFirstPoint(). 
 

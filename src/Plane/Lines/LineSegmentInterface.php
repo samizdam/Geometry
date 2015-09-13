@@ -1,11 +1,41 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
+use samizdam\Geometry\Plane\PointInterface;
+
+/**
+ *
+ * @author samizdam
+ *        
+ */
 interface LineSegmentInterface extends LineInterface
 {
+
+    /**
+     * Get begin Point of the Segment
+     * 
+     * @return PointInterface
+     */
     public function getFirstPoint();
-    
+
+    /**
+     * Get end Point if the Segment
+     * 
+     * @return PointInterface
+     */
     public function getLastPoint();
-    
+
+    /**
+     * Calc circumference
+     * 
+     * @return float
+     */
     public function getLength();
+
+    /**
+     * Get a middle Point betwen start and end.
+     *
+     * @return PointInterface
+     */
+    public function getCentralPoint();
 }

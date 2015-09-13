@@ -15,19 +15,19 @@ class Circle implements CircleInterface
     
     use CalculatorAwareTrait;
 
-    private $pointO;
+    private $center;
 
     private $R;
 
-    public function __construct(PointInterface $pointO, $R)
+    public function __construct(PointInterface $center, $R)
     {
-        $this->pointO = $pointO;
+        $this->center = $center;
         $this->R = (float) $R;
     }
 
     public function getCentralPoint()
     {
-        return $this->pointO;
+        return $this->center;
     }
 
     public function getR()

@@ -24,6 +24,16 @@ class FactoriesCollection implements FactoriesCollectionInterface
         $this->objectPool = new \ArrayObject();
     }
 
+    /**
+     *
+     * (non-PHPdoc)
+     * 
+     * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getFactory()
+     *
+     * @param unknown $interface
+     * @throws Exceptions\OutOfBoundsException
+     * @return mixed
+     */
     public function getFactory($interface)
     {
         if (! $this->objectPool->offsetExists($interface) && isset($this->classMap[$interface])) {
@@ -34,6 +44,16 @@ class FactoriesCollection implements FactoriesCollectionInterface
         return $this->objectPool->offsetGet($interface);
     }
 
+    /**
+     *
+     * (non-PHPdoc)
+     * 
+     * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::setFactory()
+     *
+     * @param unknown $interface
+     * @param unknown $factoryClassName
+     * @throws Exceptions\InvalidArgumentException
+     */
     public function setFactory($interface, $factoryClassName)
     {
         $factoryInstance = new $factoryClassName();
@@ -44,18 +64,49 @@ class FactoriesCollection implements FactoriesCollectionInterface
         }
     }
 
+    /**
+     *
+     * @return Angle\AngleFactoryInterface
+     */
     public function getAngleFactory()
     {
         return $this->getFactory(Angle\AngleFactoryInterface::class);
     }
 
+    /**
+     *
+     * (non-PHPdoc)
+     * 
+     * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getPolygonFactory()
+     *
+     * @return Polygons\PolygonFactoryInterface
+     */
     public function getPolygonFactory()
     {
         return $this->getFactory(Polygons\PolygonFactoryInterface::class);
     }
 
+    /**
+     *
+     * (non-PHPdoc)
+     * 
+     * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getLineFactory()
+     *
+     * @return Lines\LineFactoryInterface
+     */
     public function getLineFactory()
     {
         return $this->getFactory(Lines\LineFactoryInterface::class);
+    }
+    
+    /**
+     * Get point by Cartesian (Decarts) coordinates.
+     * 
+     * @param float $x
+     * @param float $y
+     */
+    public function getPoint($x, $y)
+    {
+        return new Point($x, $y);
     }
 }
