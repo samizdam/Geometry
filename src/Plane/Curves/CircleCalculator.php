@@ -17,5 +17,7 @@ class CircleCalculator implements CircleCalculatorInterface
     }
 
     public function getLength(CircleInterface $circle)
-    {}
+    {
+        return 2 * $circle->getR() * Constants::π;
+    }
 }

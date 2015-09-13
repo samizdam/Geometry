@@ -37,7 +37,9 @@ class Circle implements CircleInterface
 
     public function getLength()
     {
-        return 2 * $this->R * Constants::π;
+        return $this->getComposeCalculator()
+            ->getCalculator(CircleCalculatorInterface::class)
+            ->getLength($this);
     }
 
     public function getArea()

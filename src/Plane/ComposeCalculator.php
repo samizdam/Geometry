@@ -26,12 +26,14 @@ class ComposeCalculator implements ComposeCalculatorInterface
 
     public function getCalculator($interface)
     {
-        if (! $this->objectPool->offsetExists($interface) && isset($this->classMap[$interface])) {
-            $this->setCalculator($interface, $this->classMap[$interface]);
+        if (isset($this->classMap[$interface])) {
+            if (! $this->objectPool->offsetExists($interface)) {
+                $this->setCalculator($interface, $this->classMap[$interface]);
+            }
+            return $this->objectPool->offsetGet($interface);
         } else {
             throw new Exceptions\OutOfBoundsException("Unknow calculator interface {$interface}");
         }
-        return $this->objectPool->offsetGet($interface);
     }
 
     public function setCalculator($interface, $calculatorClassName)
