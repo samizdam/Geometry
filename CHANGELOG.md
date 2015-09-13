@@ -12,12 +12,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Implement configuration for units, precision etc.
 
 ### Changed
-- Normalize naming of arguments, fields and methods. To fix in some guideline.  
-- Restore Constant overriding implementation 
+- Normalize naming of arguments, fields and methods. To fix in some guideline.   
 
 ## 0.3.1 - 2015-09-XX
 ### Fixed
 - Bug in ComposeCalculator::getCalculator(). 
+- Restore Constant overriding implementation
 
 ### Added
 - Circle entity and calculator classes.
