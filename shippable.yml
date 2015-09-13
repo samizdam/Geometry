@@ -3,4 +3,9 @@ language: php
 
 # version numbers, testing against two versions of node
 php:
-    - 5.6
+  - 5.6
+
+before_script:
+  - cd tests
+script:
+  - phpunit .
