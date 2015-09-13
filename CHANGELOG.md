@@ -20,7 +20,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - LengthCalculator classes. 
 
 ### Change 
-- Remove unused trait import from AngleSizeCalculator implementation. 
+- Circle class moved to Curves package. 
+
+### Removed
+- Unused implementation for dymanic Constants: ConstantsAwareInreface and trait.  
 
 ## 0.3.0 - 2015-09-13
 ### Change 
