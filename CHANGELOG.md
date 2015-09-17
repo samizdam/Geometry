@@ -12,9 +12,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Implement configuration for units, precision etc.
 
 ### Changed
-- Normalize naming of arguments, fields and methods. To fix in some guideline.   
+- Normalize naming of arguments, fields and methods. To fix in some guideline.
+- Use Caclulator for getting Ellipse sizes. 
 
-## 0.3.2 - 2015-09-XX
+## 0.4.0 - 2015-09-17
 ### Fixed
 - Bug in ComposeCalculator::getCalculator(). 
 - Restore Constant overriding implementation
