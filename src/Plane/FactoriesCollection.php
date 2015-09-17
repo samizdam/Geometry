@@ -15,19 +15,22 @@ class FactoriesCollection implements FactoriesCollectionInterface
 
     private $classMap = [
         Angle\AngleFactoryInterface::class => Angle\AngleFactory::class,
-        Polygons\PolygonFactoryInterface::class => Polygons\PolygonFactory::class,
-        Lines\LineFactoryInterface::class => Lines\LineFactory::class
-    ];
+        Curves\CurvesFactoryInterface::class => Curves\CurvesFactory::class,
+        Lines\LineFactoryInterface::class => Lines\LineFactory::class,
+        Polygons\PolygonFactoryInterface::class => Polygons\PolygonFactory::class
+    ]
+    ;
 
     public function __construct(array $classMap = [])
     {
+        $this->classMap = array_merge($this->classMap, $classMap);
         $this->objectPool = new \ArrayObject();
     }
 
     /**
      *
      * (non-PHPdoc)
-     * 
+     *
      * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getFactory()
      *
      * @param unknown $interface
@@ -36,18 +39,21 @@ class FactoriesCollection implements FactoriesCollectionInterface
      */
     public function getFactory($interface)
     {
-        if (! $this->objectPool->offsetExists($interface) && isset($this->classMap[$interface])) {
-            $this->setFactory($interface, $this->classMap[$interface]);
+        if (isset($this->classMap[$interface])) {
+            if (! $this->objectPool->offsetExists($interface)) {
+                $this->setFactory($interface, $this->classMap[$interface]);
+            }
+            
+            return $this->objectPool->offsetGet($interface);
         } else {
             throw new Exceptions\OutOfBoundsException("Unknow factory interface {$interface}");
         }
-        return $this->objectPool->offsetGet($interface);
     }
 
     /**
      *
      * (non-PHPdoc)
-     * 
+     *
      * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::setFactory()
      *
      * @param unknown $interface
@@ -76,7 +82,7 @@ class FactoriesCollection implements FactoriesCollectionInterface
     /**
      *
      * (non-PHPdoc)
-     * 
+     *
      * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getPolygonFactory()
      *
      * @return Polygons\PolygonFactoryInterface
@@ -89,7 +95,7 @@ class FactoriesCollection implements FactoriesCollectionInterface
     /**
      *
      * (non-PHPdoc)
-     * 
+     *
      * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getLineFactory()
      *
      * @return Lines\LineFactoryInterface
@@ -98,12 +104,25 @@ class FactoriesCollection implements FactoriesCollectionInterface
     {
         return $this->getFactory(Lines\LineFactoryInterface::class);
     }
-    
+
+    /**
+     *
+     * (non-PHPdoc)
+     *
+     * @see \samizdam\Geometry\Plane\FactoriesCollectionInterface::getCurvesFactory()
+     *
+     */
+    public function getCurvesFactory()
+    {
+        return $this->getFactory(Curves\CurvesFactoryInterface::class);
+    }
+
     /**
      * Get point by Cartesian (Decarts) coordinates.
-     * 
+     *
      * @param float $x
      * @param float $y
+     * @return PointInterface
      */
     public function getPoint($x, $y)
     {

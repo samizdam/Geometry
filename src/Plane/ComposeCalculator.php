@@ -19,15 +19,16 @@ class ComposeCalculator implements ComposeCalculatorInterface
      */
     private $classMap = [
         Angle\AngleSizeCalculatorInterface::class => Angle\AngleSizeCalculator::class,
-        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class,
         Curves\CircleCalculatorInterface::class => Curves\CircleCalculator::class,
-        Curves\EllipseCalculatorInterface::class => Curves\EllipseCalculator::class
+        Curves\EllipseCalculatorInterface::class => Curves\EllipseCalculator::class,
+        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class
     ];
 
     private $objectPool;
 
     public function __construct(array $classMap = [])
     {
+        $this->classMap = array_merge($this->classMap, $classMap);
         $this->objectPool = new \ArrayObject();
     }
 
@@ -48,6 +49,7 @@ class ComposeCalculator implements ComposeCalculatorInterface
             if (! $this->objectPool->offsetExists($interface)) {
                 $this->setCalculator($interface, $this->classMap[$interface]);
             }
+            
             return $this->objectPool->offsetGet($interface);
         } else {
             throw new Exceptions\OutOfBoundsException("Unknow calculator interface {$interface}");

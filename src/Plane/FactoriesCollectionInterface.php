@@ -1,9 +1,6 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
-use samizdam\Geometry\Plane\Lines\LineFactoryInterface;
-use samizdam\Geometry\Plane\Polygons\PolygonFactoryInterface;
-
 /**
  *
  * @author samizdam
@@ -21,16 +18,22 @@ interface FactoriesCollectionInterface
 
     /**
      *
-     * @return LineFactoryInterface
+     * @return Lines\LineFactoryInterface
      */
     public function getLineFactory();
 
     /**
      *
-     * @return PolygonFactoryInterface
+     * @return Polygons\PolygonFactoryInterface
      */
     public function getPolygonFactory();
 
+    /**
+     * 
+     * @return Curves\CurvesFactoryInterface 
+     */
+    public function getCurvesFactory();
+    
     /**
      *
      * @param string $interface

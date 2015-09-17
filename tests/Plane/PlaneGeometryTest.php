@@ -2,9 +2,12 @@
 namespace samizdam\Geometry\Plane;
 
 use samizdam\Geometry\GeometryUnitTestCase;
-use samizdam\Geometry\Plane\Polygons as Polygons;
-use samizdam\Geometry\Plane\Lines as Lines;
 
+/**
+ * 
+ * @author samizdam
+ *
+ */
 class PlaneGeometryTest extends GeometryUnitTestCase
 {
 
@@ -31,4 +34,33 @@ class PlaneGeometryTest extends GeometryUnitTestCase
         $facade = new PlaneGeometry();
         $this->assertInstanceOf(Lines\RayInterface::class, $facade->createRay(new Point(0, 0), new Point(1, 1)));
     }
+
+    public function testGetCurvesFactory()
+    {
+        $facade = new PlaneGeometry();
+        $this->assertInstanceOf(Curves\CurvesFactoryInterface::class, $facade->getCurvesFactory());
+    }
+
+    public function testGetLineFactory()
+    {
+        $facade = new PlaneGeometry();
+        $this->assertInstanceOf(Lines\LineFactory::class, $facade->getLineFactory());
+    }
+
+    public function testGetPolygonFactory()
+    {
+        $facade = new PlaneGeometry();
+        $this->assertInstanceOf(Polygons\PolygonFactory::class, $facade->getPolygonFactory());
+    }
+
+    public function testSetGetFactory()
+    {
+        $facade = new PlaneGeometry();
+        $facade->setFactory(Curves\CurvesFactoryInterface::class, AnotherCurvesFactoryImpl::class);
+        $this->assertInstanceOf(AnotherCurvesFactoryImpl::class, $facade->getFactory(Curves\CurvesFactoryInterface::class));
+    }
+}
+
+class AnotherCurvesFactoryImpl extends Curves\CurvesFactory
+{
 }

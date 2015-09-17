@@ -12,7 +12,7 @@ use samizdam\Geometry\Plane\Polygons\AbstractPolygon;
  * @author samizdam
  *        
  */
-class PlaneGeometry implements PlaneGeometryInterface
+class PlaneGeometry implements PlaneGeometryInterface, FactoriesCollectionInterface
 {
 
     private $calculationStrategiesCollection;
@@ -20,10 +20,11 @@ class PlaneGeometry implements PlaneGeometryInterface
     private $factoriesCollection;
 
     /**
-     * You can set overrinding Factory, Calculator or Constants.  
-     * 
-     * Different instances of this Facade can be configure dynamic. Only Contants will be static for in all Application.  
-     * 
+     * You can set overrinding Factory, Calculator or Constants.
+     *
+     *
+     * Different instances of this Facade can be configure dynamic. Only Contants will be static for in all Application.
+     *
      * @param FactoriesCollectionInterface $factoryCollection
      * @param ComposeCalculatorInterface $calculationStrategiesCollection
      * @param Constants $constants
@@ -53,6 +54,30 @@ class PlaneGeometry implements PlaneGeometryInterface
     {
         return $this->factoriesCollection->getLineFactory()->createLineSegment($A, $B);
     }
+
+
+    public function setFactory($interface, $factoryClassName)
+    {
+        return $this->factoriesCollection->setFactory($interface, $factoryClassName);
+    }
     
+    public function getFactory($interface)
+    {
+        return $this->factoriesCollection->getFactory($interface);
+    }
     
+    public function getCurvesFactory()
+    {
+        return $this->factoriesCollection->getCurvesFactory();
+    }
+
+    public function getLineFactory()
+    {
+        return $this->factoriesCollection->getLineFactory();
+    }
+
+    public function getPolygonFactory()
+    {
+        return $this->factoriesCollection->getPolygonFactory();
+    }
 }
