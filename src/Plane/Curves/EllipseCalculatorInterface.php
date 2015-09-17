@@ -8,14 +8,6 @@ namespace samizdam\Geometry\Plane\Curves;
  */
 interface EllipseCalculatorInterface
 {
-
-    /**
-     * Get Radius (incircle) of Ellipse
-     * 
-     * @param EllipseInterface $ellipse
-     * @return float
-     */
-    public function getR(EllipseInterface $ellipse);
     
     /**
      * Get Area of Ellipse

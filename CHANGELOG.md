@@ -11,20 +11,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc.
 - Comparators for Shapes and their characters. 
-- Facade methods to provide Curves subpackage.   
+- Facade methods to provide Curves subpackage. 
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
-- Use Caclulator for getting Ellipse sizes. 
 
 ### Fixed
 - Merge class map in CompositeCalculator for change implementation for some calc. 
 
 ## 0.4.1 - 2015-09-XX
 ### Added
-- 
+- Curves Factory.  
 
 ### Changed 
+- Use Caclulator for getting Ellipse sizes. 
 
 ## 0.4.0 - 2015-09-17
 ### Fixed

@@ -1,7 +1,6 @@
 <?php
 namespace samizdam\Geometry\Plane\Curves;
 
-use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
 
@@ -15,19 +14,19 @@ class Circle implements CircleInterface
     
     use CalculatorAwareTrait;
 
-    private $center;
+    private $centralPoint;
 
     private $R;
 
-    public function __construct(PointInterface $center, $R)
+    public function __construct(PointInterface $centralPoint, $R)
     {
-        $this->center = $center;
+        $this->centralPoint = $centralPoint;
         $this->R = (float) $R;
     }
 
     public function getCentralPoint()
     {
-        return $this->center;
+        return $this->centralPoint;
     }
 
     public function getR()

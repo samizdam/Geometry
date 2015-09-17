@@ -2,6 +2,7 @@
 namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\Constants;
+
 /**
  *
  * @author samizdam
@@ -9,17 +10,6 @@ use samizdam\Geometry\Constants;
  */
 class EllipseCalculator implements EllipseCalculatorInterface
 {
-
-    /**
-     * Get Radius (incircle) of Ellipse
-     *
-     * @param EllipseInterface $ellipse
-     * @return float
-     */
-    public function getR(EllipseInterface $ellipse)
-    {
-        return $ellipse->getSemiMinorAxis();
-    }
 
     /**
      * Get Area of Ellipse

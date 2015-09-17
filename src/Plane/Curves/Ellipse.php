@@ -4,7 +4,6 @@ namespace samizdam\Geometry\Plane\Curves;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
 use samizdam\Geometry\Plane\Lines\LineSegmentInterface;
-use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
 
@@ -15,6 +14,7 @@ use samizdam\Geometry\Plane\CalculatorAwareTrait;
  */
 class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
 {
+    
     use FactoriesCollectionAwareTrait;
     use CalculatorAwareTrait;
 
@@ -134,7 +134,7 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
 
     public function getR()
     {
-        return $this->getCalculator()->getR($this);
+        return $this->getSemiMinorAxis();
     }
 
     public function getFocusesSegment()

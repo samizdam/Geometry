@@ -53,4 +53,6 @@ class PlaneGeometry implements PlaneGeometryInterface
     {
         return $this->factoriesCollection->getLineFactory()->createLineSegment($A, $B);
     }
+    
+    
 }
