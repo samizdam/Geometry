@@ -21,8 +21,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Circle entity and calculator classes.
-- Ellipse entity classes.
+- Ellipse implementation.
 - Factory method for Point. 
+- LineSegmentInterface::getCentalPoint() method.
 
 ### Changed
 - CircleInterface. 
