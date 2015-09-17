@@ -1,6 +1,7 @@
 <?php
 namespace samizdam\Geometry\Plane\Curves;
 
+use samizdam\Geometry\Plane\Lines\LineInterface;
 /**
  *
  * @author samizdam
@@ -43,4 +44,12 @@ interface EllipseInterface extends CircleInterface
      * @return float
      */
     public function getFocalLength();
+    
+    /**
+     * Get Segment between Focuses
+     * 
+     * @return LineInterface
+     */
+    public function getFocusesSegment();
+    
 }

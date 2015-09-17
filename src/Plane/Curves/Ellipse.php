@@ -6,6 +6,7 @@ use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
 use samizdam\Geometry\Plane\Lines\LineSegmentInterface;
 use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\CalculatorAwareTrait;
 
 /**
  *
@@ -15,6 +16,7 @@ use samizdam\Geometry\Plane\PointInterface;
 class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
 {
     use FactoriesCollectionAwareTrait;
+    use CalculatorAwareTrait;
 
     /**
      *
@@ -27,9 +29,9 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
      * @var float
      */
     private $focalLength;
-    
+
     /**
-     * 
+     *
      * @var float
      */
     private $focalParameter;
@@ -59,19 +61,19 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
     private $F1, $F2;
 
     /**
-     * 
+     *
      * @var float
      */
     private $area;
-    
+
     /**
-     * 
+     *
      * @var float
      */
     private $length;
-    
+
     /**
-     * 
+     *
      * @var unknown
      */
     private $focusesSegment;
@@ -81,7 +83,7 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
      *
      * @param PointInterface $F1
      * @param PointInterface $F2
-     * @param unknown $semiMajorAxis
+     * @param float $semiMajorAxis
      */
     public function __construct(PointInterface $F1, PointInterface $F2, $semiMajorAxis)
     {
@@ -89,17 +91,10 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
         $this->F2 = $F2;
         $this->semiMajorAxis = $semiMajorAxis;
     }
-    
-    private function getFocusesSegment()
-    {
-        return $this->focusesSegment ? : $this->focusesSegment = $this->getFactoriesCollection()
-            ->getLineFactory()
-            ->createLineSegment($this->F1, $this->F2);
-    }
-    
+
     public function getCentralPoint()
     {
-        return $this->centralPoint ?  : $this->centralPoint = $this->getFocusesSegment()->getCentralPoint(); 
+        return $this->centralPoint ?  : $this->centralPoint = $this->getFocusesSegment()->getCentralPoint();
     }
 
     public function getSemiMajorAxis()
@@ -109,39 +104,53 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
 
     public function getSemiMinorAxis()
     {
-        return $this->semiMinorAxis ?  : $this->semiMinorAxis = $this->getSemiMajorAxis() * sqrt(1 - pow($this->getEccentricity(), 2));
+        return $this->semiMinorAxis ?  : $this->semiMinorAxis = $this->calc(__FUNCTION__);
     }
 
     public function getLength()
     {
-        $a = $this->getSemiMajorAxis();
-        $b = $this->getSemiMinorAxis();
-        
-        return $this->length ? : $this->length = 4 * ((Constants::π * $a * $b + pow(($a - $b), 2)) / ($a + $b));
+        return $this->length ?  : $this->length = $this->calc(__FUNCTION__);
     }
 
     public function getArea()
     {
-        return $this->area ? : $this->area = Constants::π * $this->getSemiMajorAxis() * $this->getSemiMinorAxis();
+        return $this->area ?  : $this->area = $this->calc(__FUNCTION__);
     }
 
     public function getFocalLength()
     {
-        return $this->focalLength ? : $this->focalLength = $this->getFocusesSegment()->getLength() / 2;
+        return $this->focalLength ?  : $this->focalLength = $this->calc(__FUNCTION__);
     }
 
     public function getFocalParameter()
     {
-        return $this->focalParameter ? : $this->focalParameter = $this->getSemiMajorAxis() * (1 - pow($this->getEccentricity(), 2));
+        return $this->focalParameter ?  : $this->focalParameter = $this->calc(__FUNCTION__);
     }
 
     public function getEccentricity()
     {
-        return $this->eccentricity ?  : $this->eccentricity = $this->getFocalLength() / $this->getSemiMajorAxis();
+        return $this->eccentricity ?  : $this->eccentricity = $this->calc(__FUNCTION__);
     }
 
     public function getR()
     {
-        return $this->getSemiMinorAxis();
+        return $this->getCalculator()->getR($this);
+    }
+
+    public function getFocusesSegment()
+    {
+        return $this->focusesSegment ?  : $this->focusesSegment = $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegment($this->F1, $this->F2);
+    }
+
+    private function getCalculator()
+    {
+        return $this->getComposeCalculator()->getCalculator(EllipseCalculatorInterface::class);
+    }
+
+    private function calc($method)
+    {
+        return $this->getCalculator()->{$method}($this);
     }
 }
