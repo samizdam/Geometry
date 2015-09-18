@@ -6,9 +6,10 @@ php:
 
 before_install:
   - composer self-update
+  - composer require codeclimate/php-test-reporter --dev
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
 
 script:
-  - phpunit --configuration tests/phpunit.xml.dist tests/
+  - phpunit --configuration tests/phpunit.xml.dist --coverage-clover build/logs/clover.xml tests/

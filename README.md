@@ -1,5 +1,11 @@
 # README #
 
+[![Build Status](https://travis-ci.org/samizdam/Geometry.svg?branch=master)](https://travis-ci.org/samizdam/Geometry)
+
+[![Code Climate](https://codeclimate.com/repos/55fb4bd76956803401006359/badges/4d023340572418f2c2a6/gpa.svg)](https://codeclimate.com/repos/55fb4bd76956803401006359/feed)
+
+[![Test Coverage](https://codeclimate.com/repos/55fb4bd76956803401006359/badges/4d023340572418f2c2a6/coverage.svg)](https://codeclimate.com/repos/55fb4bd76956803401006359/coverage)
+
 ### What is this repository for? ###
 
 Some geometry stuff, extracted from my other projects. 
