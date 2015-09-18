@@ -13,3 +13,6 @@ install:
 
 script:
   - phpunit --configuration tests/travis-phpunit.xml tests/
+
+after_script:
+  - vendor/bin/test-reporter
