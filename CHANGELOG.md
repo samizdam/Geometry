@@ -15,6 +15,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
+## 0.4.2 - 2015-09-19
+### Added
+- PolygonCalculator classes.
+- PolygonInspector classes.   
 
 ## 0.4.1 - 2015-09-18
 ### Added

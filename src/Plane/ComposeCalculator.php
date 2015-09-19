@@ -21,7 +21,8 @@ class ComposeCalculator implements ComposeCalculatorInterface
         Angle\AngleSizeCalculatorInterface::class => Angle\AngleSizeCalculator::class,
         Curves\CircleCalculatorInterface::class => Curves\CircleCalculator::class,
         Curves\EllipseCalculatorInterface::class => Curves\EllipseCalculator::class,
-        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class
+        Lines\LengthCalculatorInterface::class => Lines\LengthCalculator::class,
+        Polygons\PolygonCalculatorInterface::class => Polygons\PolygonCalculator::class
     ];
 
     private $objectPool;
@@ -40,7 +41,7 @@ class ComposeCalculator implements ComposeCalculatorInterface
      *
      * @param string $interface
      * @throws Exceptions\OutOfBoundsException
-     * @return Angle\AngleSizeCalculatorInterface|Curves\EllipseCalculatorInterface|Curves\CircleCalculatorInterface|Lines\LengthCalculatorInterface
+     * @return Angle\AngleSizeCalculatorInterface|Curves\EllipseCalculatorInterface|Curves\CircleCalculatorInterface|Lines\LengthCalculatorInterface|Polygons\PolygonCalculatorInterface
      *
      */
     public function getCalculator($interface)
