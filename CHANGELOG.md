@@ -10,7 +10,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Implement library Facade. 
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc.
-- Comparators for Shapes and their characters.  
+- Comparators for Shapes and their characters. 
+- InspectorsCollection. 
+- New methods to PolygonInspector. 
+
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
