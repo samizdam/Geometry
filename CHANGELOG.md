@@ -11,10 +11,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc.
 - Comparators for Shapes and their characters.  
+- Method PolygonInspector::isRegularPolygon().  
+- Methods for creating Incircle and Circumcircle by given Polygon (in CurveFactory?). 
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
+### Fixed 
+- Area calculation for Irregural Polygons. 
+
+## 0.4.2 - 2015-09-XX
+### Added
+
+### Changed
 
 ## 0.4.1 - 2015-09-18
 ### Added
