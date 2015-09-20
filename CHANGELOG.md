@@ -10,7 +10,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Implement library Facade. 
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc.
-- Comparators for Shapes and their characters.  
+- Comparators for Shapes and their characters.
+- InspectorsCollection. 
+- New methods to PolygonInspector. 
 - Method PolygonInspector::isRegularPolygon().  
 - Methods for creating Incircle and Circumcircle by given Polygon (in CurveFactory?). 
 
@@ -20,10 +22,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed 
 - Area calculation for Irregural Polygons. 
 
-## 0.4.2 - 2015-09-XX
+## 0.4.3 - 2015-09-XX
 ### Added
 
 ### Changed
+
+## 0.4.2 - 2015-09-19
+### Added
+- PolygonCalculator classes.
+- PolygonInspector classes.   
 
 ## 0.4.1 - 2015-09-18
 ### Added
