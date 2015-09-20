@@ -2,14 +2,18 @@
 namespace samizdam\Geometry\Plane\Polygons;
 
 use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
+use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 
 /**
  *
  * @author samizdam
  *        
  */
-class PolygonCalculator implements PolygonCalculatorInterface
+class PolygonCalculator implements PolygonCalculatorInterface, FactoriesCollectionAwareInterface
 {
+    
+    use FactoriesCollectionAwareTrait;
 
     private $inspector;
 
@@ -33,38 +37,37 @@ class PolygonCalculator implements PolygonCalculatorInterface
 
     protected function getTriangleArea(PolygonInterface $triangle)
     {
+        $segments = $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegmentCollection($triangle->getPoints());
+        
         $result = 0;
-        $points = $triangle->getPoints();
-        for ($i = 0; $i < count($points) - 1; $i ++) {
-            list ($x1, $y1, $x2, $y2) = $this->getVectorCoordinates($points, $i);
+        foreach ($segments as $segment) {
+            list ($x1, $y1, $x2, $y2) = $segment->getListOfCoordinates();
             $result += ($x1 * $y2) - ($y1 * $x2);
         }
         return abs($result) / 2;
     }
 
+    /**
+     * This method work well for regular polygons.
+     *
+     * Method for case with irregular p. must be implement!
+     *
+     * @param PolygonInterface $polygon
+     */
     protected function getPolygonArea(PolygonInterface $polygon)
     {
+        $segments = $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegmentCollection($polygon->getPoints());
+        
         $result = 0;
-        $points = $polygon->getPoints();
-        for ($i = 0; $i < count($points) - 1; $i ++) {
-            list ($x1, $y1, $x2, $y2) = $this->getVectorCoordinates($points, $i);
+        foreach ($segments as $segment) {
+            list ($x1, $y1, $x2, $y2) = $segment->getListOfCoordinates();
             $result += ($x1 + $x2) * ($y1 - $y2);
         }
+        
         return abs($result) / 2;
-    }
-
-    /**
-     *
-     * @param PointInterface[] $points
-     * @param int $index
-     */
-    protected function getVectorCoordinates(array $points, $index)
-    {
-        return [
-            $points[$index]->getX(),
-            $points[$index]->getY(),
-            $points[$index + 1]->getX(),
-            $points[$index + 1]->getY()
-        ];
     }
 }

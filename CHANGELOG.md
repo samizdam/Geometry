@@ -24,8 +24,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.4.3 - 2015-09-XX
 ### Added
+- LineSegmentCollection classes and related methods in LinesFactory. 
 
 ### Changed
+
 
 ## 0.4.2 - 2015-09-19
 ### Added

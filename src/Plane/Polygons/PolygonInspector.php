@@ -13,4 +13,10 @@ class PolygonInspector implements PolygonInspectorInterface
     {
         return count($triangle->getPoints()) === 3;
     }
+    
+    public function isRegularPolygon(PolygonInterface $polygon)
+    {
+        $polygon->getPoints();
+        
+    }
 }

@@ -31,4 +31,12 @@ interface LineFactoryInterface
      * @return RayInterface
      */
     public function createRay(PointInterface $pointA, PointInterface $pointB);
+    
+    /**
+     * 
+     * 
+     * @param PointInterface[] $points
+     * @return LineSegmentCollectionInterface|LineSegmentInterface[]
+     */
+    public function createLineSegmentCollection(array $points);
 }

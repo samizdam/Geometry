@@ -29,13 +29,22 @@ class LineSegment extends AbstractLine implements LineSegmentInterface
 
     public function getCentralPoint()
     {
-        $Ax = $this->getFirstPoint()->getX();
-        $Ay = $this->getFirstPoint()->getY();
-        $Bx = $this->getLastPoint()->getX();
-        $By = $this->getLastPoint()->getY();
+        list($x1, $y1, $x2, $y2) = $this->getListOfCoordinates();
         
-        $Cx = ($Ax + $Bx) / 2;
-        $Cy = ($Ay + $By) / 2;
+        $Cx = ($x1 + $x2) / 2;
+        $Cy = ($y1 + $y2) / 2;
         return $this->getFactoriesCollection()->getPoint($Cx, $Cy);
+    }
+
+    public function getListOfCoordinates()
+    {
+        $firstPoint = $this->getFirstPoint();
+        $lastPoint = $this->getLastPoint();
+        return [
+            $firstPoint->getX(),
+            $firstPoint->getY(),
+            $lastPoint->getX(),
+            $lastPoint->getY()
+        ];
     }
 }

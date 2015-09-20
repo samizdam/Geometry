@@ -11,4 +11,6 @@ interface PolygonInspectorInterface
 {
 
     public function isTriangle(PolygonInterface $triangle);
+    
+    public function isRegularPolygon(PolygonInterface $polygon);
 }

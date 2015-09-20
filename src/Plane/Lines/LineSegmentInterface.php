@@ -13,21 +13,21 @@ interface LineSegmentInterface extends LineInterface
 
     /**
      * Get begin Point of the Segment
-     * 
+     *
      * @return PointInterface
      */
     public function getFirstPoint();
 
     /**
      * Get end Point if the Segment
-     * 
+     *
      * @return PointInterface
      */
     public function getLastPoint();
 
     /**
      * Calc circumference
-     * 
+     *
      * @return float
      */
     public function getLength();
@@ -38,4 +38,10 @@ interface LineSegmentInterface extends LineInterface
      * @return PointInterface
      */
     public function getCentralPoint();
+
+    /**
+     * Get list of coorginate: x1, y1, x2, y1
+     * @return array
+     */
+    public function getListOfCoordinates();
 }

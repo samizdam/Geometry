@@ -17,10 +17,11 @@ class LineFactory implements LineFactoryInterface
     }
 
     /**
-     * 
+     *
      * (non-PHPdoc)
+     *
      * @see \samizdam\Geometry\Plane\Lines\LineFactoryInterface::createLineSegment()
-     * 
+     *
      * @param PointInterface $pointA
      * @param PointInterface $pointB
      * @return \samizdam\Geometry\Plane\Lines\LineSegment
@@ -33,5 +34,10 @@ class LineFactory implements LineFactoryInterface
     public function createRay(PointInterface $pointA, PointInterface $pointB)
     {
         return new Ray($pointA, $pointB);
+    }
+
+    public function createLineSegmentCollection(array $points)
+    {
+        return new LineSegmentCollection($points, $this);
     }
 }
