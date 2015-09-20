@@ -15,9 +15,9 @@ class AngleTest extends GeometryUnitTestCase
         $angle = new Angle($A, $B, $C);
         $this->assertEquals(180, $angle->getSize());
         
-        $A1 = new Point(0, 1);
-        $B1 = new Point(0, 0);
-        $C1 = new Point(1, 0);
+        $A1 = new Point(0, 0);
+        $B1 = new Point(1, 0);
+        $C1 = new Point(1, 1);
         $angle1 = new Angle($A1, $B1, $C1);
         $this->assertEquals(90, $angle1->getSize());
         

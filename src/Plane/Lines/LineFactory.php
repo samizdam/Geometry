@@ -2,18 +2,19 @@
 namespace samizdam\Geometry\Plane\Lines;
 
 use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\AbstractFactory;
 
 /**
  *
  * @author samizdam
  *        
  */
-class LineFactory implements LineFactoryInterface
+class LineFactory extends AbstractFactory implements LineFactoryInterface
 {
 
     public function createLine(PointInterface $pointA, PointInterface $pointB)
     {
-        return new Line($pointA, $pointB);
+        return $this->injectDependecies(new Line($pointA, $pointB));
     }
 
     /**
@@ -28,16 +29,16 @@ class LineFactory implements LineFactoryInterface
      */
     public function createLineSegment(PointInterface $pointA, PointInterface $pointB)
     {
-        return new LineSegment($pointA, $pointB);
+        return $this->injectDependecies(new LineSegment($pointA, $pointB));
     }
 
     public function createRay(PointInterface $pointA, PointInterface $pointB)
     {
-        return new Ray($pointA, $pointB);
+        return $this->injectDependecies(new Ray($pointA, $pointB));
     }
 
     public function createLineSegmentCollection(array $points)
     {
-        return new LineSegmentCollection($points, $this);
+        return $this->injectDependecies(new LineSegmentCollection($points, $this));
     }
 }

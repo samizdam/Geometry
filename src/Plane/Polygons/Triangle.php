@@ -9,6 +9,6 @@ class Triangle extends AbstractPolygon
 
     public function getArea()
     {
-        return $this->getComposeCalculator()->getCalculator(PolygonCalculatorInterface::class)->getArea($this);
+        return $this->getCompositeCalculator()->getCalculator(PolygonCalculatorInterface::class)->getArea($this);
     }
 }

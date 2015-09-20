@@ -5,13 +5,14 @@ use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\Lines\LineSegmentInterface;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
+use samizdam\Geometry\Plane\AbstractFactory;
 
 /**
  *
  * @author samizdam
  *        
  */
-class CurvesFactory implements CurvesFactoryInterface, FactoriesCollectionAwareInterface
+class CurvesFactory extends AbstractFactory implements CurvesFactoryInterface, FactoriesCollectionAwareInterface
 {
     
     use FactoriesCollectionAwareTrait;
@@ -23,11 +24,11 @@ class CurvesFactory implements CurvesFactoryInterface, FactoriesCollectionAwareI
      * @see \samizdam\Geometry\Plane\Curves\CurvesFactoryInterface::createCircle()
      *
      * @param PointInterface $centralPoint
-     * @param unknown $R
+     * @param number $R
      */
     public function createCircle(PointInterface $centralPoint, $R)
     {
-        return new Circle($centralPoint, $R);
+        return $this->injectDependecies(new Circle($centralPoint, $R));
     }
 
     /**
@@ -40,9 +41,9 @@ class CurvesFactory implements CurvesFactoryInterface, FactoriesCollectionAwareI
      */
     public function createCircleByDiameterSegment(LineSegmentInterface $diameterSegment)
     {
-        $centralPoint = $diameterSegment->getFirstPoint();
-        $R = $diameterSegment->getLength();
-        return new Circle($centralPoint, $R);
+        $centralPoint = $diameterSegment->getCentralPoint();
+        $R = $diameterSegment->getLength() / 2;
+        return $this->injectDependecies(new Circle($centralPoint, $R));
     }
 
     /**
@@ -60,7 +61,7 @@ class CurvesFactory implements CurvesFactoryInterface, FactoriesCollectionAwareI
             ->getLineFactory()
             ->createLineSegment($centralPoint, $pointOnCircle)
             ->getLength();
-        return new Circle($centralPoint, $R);
+        return $this->injectDependecies(new Circle($centralPoint, $R));
     }
 
     /**
@@ -75,6 +76,6 @@ class CurvesFactory implements CurvesFactoryInterface, FactoriesCollectionAwareI
      */
     public function createEllipse(PointInterface $F1, PointInterface $F2, $semiMajorAxis)
     {
-        return new Ellipse($F1, $F2, $semiMajorAxis);
+        return $this->injectDependecies(new Ellipse($F1, $F2, $semiMajorAxis));
     }
 }

@@ -146,7 +146,7 @@ class Ellipse implements EllipseInterface, FactoriesCollectionAwareInterface
 
     private function getCalculator()
     {
-        return $this->getComposeCalculator()->getCalculator(EllipseCalculatorInterface::class);
+        return $this->getCompositeCalculator()->getCalculator(EllipseCalculatorInterface::class);
     }
 
     private function calc($method)

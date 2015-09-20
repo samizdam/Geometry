@@ -1,84 +1,32 @@
 <?php
 namespace samizdam\Geometry\Plane\Lines;
 
-use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
-use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
+use samizdam\Geometry\Plane\Collections\AbstractCollection;
+use samizdam\Geometry\Plane\PointInterface;
 
 /**
- * 
- * @author samizdam
  *
+ * @author samizdam
+ *        
  */
-class LineSegmentCollection implements LineSegmentCollectionInterface
+class LineSegmentCollection extends AbstractCollection implements LineSegmentCollectionInterface
 {
-    
-    use FactoriesCollectionAwareTrait;
 
-    private $points;
-
-    private $segments;
-
+    /**
+     * 
+     * @param PointInterface[] $points
+     * @param LineFactoryInterface $lineFactory
+     */
     public function __construct(array $points, LineFactoryInterface $lineFactory)
     {
-        $this->points = $points;
-        
-        $segments = [];
+        $items = [];
         
         for ($i = 0; $i < count($points) - 1;) {
-            $segments[] = $lineFactory->createLineSegment($points[$i], $points[++ $i]);
+            $items[] = $lineFactory->createLineSegment($points[$i], $points[++ $i]);
         }
         // and add last segment
-        $segments[] = $lineFactory->createLineSegment($points[$i], $points[0]);
+        $items[] = $lineFactory->createLineSegment($points[$i], $points[0]);
         
-        $this->segments = \SplFixedArray::fromArray($segments);
-    }
-
-    public static function createByPolygon(PolygonInterface $polygon)
-    {
-        return new self($polygon->getPoints());
-    }
-
-    /**
-     * Get number of Segments in the Collection
-     * @return number
-     */
-    public function count()
-    {
-        return $this->segments->getSize();
-    }
-
-    /**
-     * Get current LineSegment object
-     *
-     * @return LineSegmentInterface
-     */
-    public function current()
-    {
-        return $this->segments->current();
-    }
-
-    /**
-     * Get current index of segment in Collection
-     * 
-     * @return number
-     */
-    public function key()
-    {
-        return $this->segments->key();
-    }
-
-    public function next()
-    {
-        return $this->segments->next();
-    }
-
-    public function rewind()
-    {
-        return $this->segments->rewind();
-    }
-
-    public function valid()
-    {
-        return $this->segments->valid();
+        $this->items = \SplFixedArray::fromArray($items);
     }
 }

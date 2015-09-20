@@ -8,7 +8,7 @@ use samizdam\Geometry\Exceptions as Exceptions;
  * @author samizdam
  *        
  */
-class FactoriesCollection implements FactoriesCollectionInterface
+class FactoriesCollection extends AbstractFactory implements FactoriesCollectionInterface
 {
 
     private $objectPool;
@@ -18,8 +18,7 @@ class FactoriesCollection implements FactoriesCollectionInterface
         Curves\CurvesFactoryInterface::class => Curves\CurvesFactory::class,
         Lines\LineFactoryInterface::class => Lines\LineFactory::class,
         Polygons\PolygonFactoryInterface::class => Polygons\PolygonFactory::class
-    ]
-    ;
+    ];
 
     public function __construct(array $classMap = [])
     {
@@ -64,6 +63,7 @@ class FactoriesCollection implements FactoriesCollectionInterface
     {
         $factoryInstance = new $factoryClassName();
         if ($factoryInstance instanceof $interface) {
+            $this->injectDependecies($factoryInstance);
             $this->objectPool->offsetSet($interface, $factoryInstance);
         } else {
             throw new Exceptions\InvalidArgumentException("{$factoryClassName} must implement {$interface}.");

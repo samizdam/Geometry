@@ -8,7 +8,7 @@ use samizdam\Geometry\Exceptions;
  * @author samizdam
  *        
  */
-class ComposeCalculator implements ComposeCalculatorInterface
+class CompositeCalculator implements CompositeCalculatorInterface
 {
 
     /**
@@ -37,7 +37,7 @@ class ComposeCalculator implements ComposeCalculatorInterface
      *
      * (non-PHPdoc)
      *
-     * @see \samizdam\Geometry\Plane\ComposeCalculatorInterface::getCalculator()
+     * @see \samizdam\Geometry\Plane\CompositeCalculatorInterface::getCalculator()
      *
      * @param string $interface
      * @throws Exceptions\OutOfBoundsException

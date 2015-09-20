@@ -11,12 +11,12 @@ trait CalculatorAwareTrait
 
     private $compositeCalculator;
     
-    public function getComposeCalculator()
+    public function getCompositeCalculator()
     {
-        return $this->compositeCalculator ? : $this->compositeCalculator = new ComposeCalculator();
+        return $this->compositeCalculator ? : $this->compositeCalculator = new CompositeCalculator();
     }
     
-    public function setComposeCalculator(ComposeCalculatorInterface $calculator)
+    public function setCompositeCalculator(CompositeCalculatorInterface $calculator)
     {
         $this->compositeCalculator = $calculator;
     }

@@ -6,14 +6,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Implement wrappers for all calculation to optional using bc_math, GMP or another extentions.    
 - Solid package.
-- Plane\ShapeInterface. 
+- Plane\ShapeInterface? 
 - Implement library Facade. 
 - Add support for proxing via external Gateway over interfaces?  
 - Implement configuration for units, precision etc.
 - Comparators for Shapes and their characters.
-- InspectorsCollection. 
-- New methods to PolygonInspector. 
-- Method PolygonInspector::isRegularPolygon().  
+- InspectorsCollection? 
+- New methods to PolygonInspector: check for common types of polygons. 
 - Methods for creating Incircle and Circumcircle by given Polygon (in CurveFactory?). 
 
 ### Changed
@@ -22,12 +21,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed 
 - Area calculation for Irregural Polygons. 
 
-## 0.4.3 - 2015-09-XX
+## 0.5.0 - 2015-09-20
 ### Added
 - LineSegmentCollection classes and related methods in LinesFactory. 
+- Method PolygonInspector::isRegularPolygon().  
+- AngleCollection. 
+- LineSegment::getListOfCoordinates() - useful for list assigment. 
 
 ### Changed
+- Rename ComposeCalculator to CompositeCalculator.
+- Concept of DI and related interfaces.  All Factories now implement AbstractFactory and inject dependecies.  
 
+### Fixed
+- Bug with creating Circle by DiameterSegment in Factory. 
 
 ## 0.4.2 - 2015-09-19
 ### Added

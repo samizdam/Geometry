@@ -12,12 +12,8 @@ use samizdam\Geometry\Plane\Polygons\AbstractPolygon;
  * @author samizdam
  *        
  */
-class PlaneGeometry implements PlaneGeometryInterface, FactoriesCollectionInterface
+class PlaneGeometry extends AbstractFactory implements PlaneGeometryInterface
 {
-
-    private $calculationStrategiesCollection;
-
-    private $factoriesCollection;
 
     /**
      * You can set overrinding Factory, Calculator or Constants.
@@ -26,58 +22,65 @@ class PlaneGeometry implements PlaneGeometryInterface, FactoriesCollectionInterf
      * Different instances of this Facade can be configure dynamic. Only Contants will be static for in all Application.
      *
      * @param FactoriesCollectionInterface $factoryCollection
-     * @param ComposeCalculatorInterface $calculationStrategiesCollection
+     * @param CompositeCalculatorInterface $calculatorCollection
      * @param Constants $constants
      */
-    public function __construct(FactoriesCollectionInterface $factoryCollection = null, ComposeCalculatorInterface $calculationStrategiesCollection = null, Constants $constants = null)
+    public function __construct(FactoriesCollectionInterface $factoryCollection = null, CompositeCalculatorInterface $calculatorCollection = null, Constants $constants = null)
     {
-        $this->calculationStrategiesCollection = $calculationStrategiesCollection ?  : new ComposeCalculator();
-        $this->factoriesCollection = $factoryCollection ?  : new FactoriesCollection();
+        $this->setCompositeCalculator($calculatorCollection ?  : new CompositeCalculator());
+        $this->setFactoriesCollection($factoryCollection ?  : new FactoriesCollection());
     }
 
     public function createPolygonByPoints(array $points)
     {
-        return $this->factoriesCollection->getPolygonFactory()->createPolygonByPoints($points);
+        return $this->getFactoriesCollection()
+            ->getPolygonFactory()
+            ->createPolygonByPoints($points);
     }
 
     public function createLine(PointInterface $A, PointInterface $B)
     {
-        return $this->factoriesCollection->getLineFactory()->createLine($A, $B);
+        return $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLine($A, $B);
     }
 
     public function createRay(PointInterface $pointA, PointInterface $pointB)
     {
-        return $this->factoriesCollection->getLineFactory()->createRay($pointA, $pointB);
+        return $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createRay($pointA, $pointB);
     }
 
     public function createLineSegment(PointInterface $A, PointInterface $B)
     {
-        return $this->factoriesCollection->getLineFactory()->createLineSegment($A, $B);
+        return $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegment($A, $B);
     }
-
 
     public function setFactory($interface, $factoryClassName)
     {
-        return $this->factoriesCollection->setFactory($interface, $factoryClassName);
+        return $this->getFactoriesCollection()->setFactory($interface, $factoryClassName);
     }
-    
+
     public function getFactory($interface)
     {
-        return $this->factoriesCollection->getFactory($interface);
+        return $this->getFactoriesCollection()->getFactory($interface);
     }
-    
+
     public function getCurvesFactory()
     {
-        return $this->factoriesCollection->getCurvesFactory();
+        return $this->getFactoriesCollection()->getCurvesFactory();
     }
 
     public function getLineFactory()
     {
-        return $this->factoriesCollection->getLineFactory();
+        return $this->getFactoriesCollection()->getLineFactory();
     }
 
     public function getPolygonFactory()
     {
-        return $this->factoriesCollection->getPolygonFactory();
+        return $this->getFactoriesCollection()->getPolygonFactory();
     }
 }

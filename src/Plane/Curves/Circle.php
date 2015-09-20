@@ -3,13 +3,14 @@ namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
+use samizdam\Geometry\Plane\CompositeCalculatorAwareInterface;
 
 /**
  *
  * @author samizdam
  *        
  */
-class Circle implements CircleInterface
+class Circle implements CircleInterface, CompositeCalculatorAwareInterface
 {
     
     use CalculatorAwareTrait;
@@ -36,14 +37,14 @@ class Circle implements CircleInterface
 
     public function getLength()
     {
-        return $this->getComposeCalculator()
+        return $this->getCompositeCalculator()
             ->getCalculator(CircleCalculatorInterface::class)
             ->getLength($this);
     }
 
     public function getArea()
     {
-        return $this->getComposeCalculator()
+        return $this->getCompositeCalculator()
             ->getCalculator(CircleCalculatorInterface::class)
             ->getArea($this);
     }

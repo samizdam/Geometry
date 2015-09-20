@@ -3,8 +3,9 @@ namespace samizdam\Geometry\Plane\Lines;
 
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
+use samizdam\Geometry\Plane\CompositeCalculatorAwareInterface;
 
-class LineSegment extends AbstractLine implements LineSegmentInterface
+class LineSegment extends AbstractLine implements LineSegmentInterface, CompositeCalculatorAwareInterface
 {
     
     use CalculatorAwareTrait;
@@ -22,7 +23,7 @@ class LineSegment extends AbstractLine implements LineSegmentInterface
 
     public function getLength()
     {
-        return $this->getComposeCalculator()
+        return $this->getCompositeCalculator()
             ->getCalculator(LengthCalculatorInterface::class)
             ->getSegmentLength($this);
     }

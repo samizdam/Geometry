@@ -1,7 +1,6 @@
 <?php
 namespace samizdam\Geometry\Plane\Polygons;
 
-
 /**
  *
  * @author samizdam
@@ -10,7 +9,17 @@ namespace samizdam\Geometry\Plane\Polygons;
 interface PolygonInspectorInterface
 {
 
+    /**
+     *
+     * @param PolygonInterface $triangle
+     * @return boolean
+     */
     public function isTriangle(PolygonInterface $triangle);
-    
-    public function isRegularPolygon(PolygonInterface $polygon);
+
+    /**
+     *
+     * @param PolygonInterface $polygon
+     * @return boolean
+     */
+    public function isRegular(PolygonInterface $polygon);
 }
