@@ -48,4 +48,17 @@ class PolygonInspectorTest extends GeometryUnitTestCase
         
         $this->assertFalse($inspector->isRegular($polygon));
     }
+    
+    public function testIsTriangle()
+    {
+        $triangle = AbstractPolygon::createByPoints([
+            new Point(0, 0),
+            new Point(1, 1),
+            new Point(1, 0)
+        ]);
+        
+        $inspector = new PolygonInspector();
+        
+        $this->assertTrue($inspector->isTriangle($triangle));
+    }
 }
