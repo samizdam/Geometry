@@ -19,6 +19,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
+## 0.5.3 - 2015-09-XX
+### Fixed
+- Collections interfaces inheritance. 
+
 ## 0.5.2 - 2015-09-24
 ### Added
 - Polygon::getLength() for perimeter. 

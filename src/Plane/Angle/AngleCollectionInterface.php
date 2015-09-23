@@ -1,18 +1,20 @@
 <?php
 namespace samizdam\Geometry\Plane\Angle;
 
+use samizdam\Geometry\Plane\Collections\CollectionInterface;
+
 /**
  *
  * @author samizdam
  *        
  */
-interface AngleCollectionInterface extends \Iterator, \Countable
+interface AngleCollectionInterface extends CollectionInterface
 {
 
     /**
      *
      * (non-PHPdoc)
-     * 
+     *
      * @see Iterator::current()
      * @return AngleInterface
      */
