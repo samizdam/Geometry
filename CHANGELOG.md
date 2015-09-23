@@ -14,14 +14,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - InspectorsCollection? 
 - New methods to PolygonInspector: check for common types of polygons. 
 - Methods for creating Incircle and Circumcircle by given Polygon (in CurveFactory?). 
+- Generated documentation.  
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
+ 
 
-### Fixed 
-- Area calculation for Irregural Polygons. 
-
-## 0.5.1 - 2015-09-XX
+## 0.5.1 - 2015-09-23
 ### Changed
 - Use universal formula for polygon area calculation. 
 
