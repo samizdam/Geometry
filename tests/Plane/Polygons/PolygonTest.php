@@ -26,6 +26,19 @@ class PolygonTest extends GeometryUnitTestCase
         ]);
         
         $this->assertEquals(6, $polygon->getArea());
+        
+        $polygon = AbstractPolygon::createByPoints([
+            new Point(0, 0),
+            new Point(0, 4),
+            new Point(4, 8),
+            new Point(4, 5),
+            new Point(3, 5),
+            new Point(3, 4),
+            new Point(4, 4),
+            new Point(4, 0)
+        ]);
+        
+        $this->assertEquals(16 + 8 - 1, $polygon->getArea());
     }
 
     public function testGetPoints()

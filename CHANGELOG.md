@@ -21,6 +21,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed 
 - Area calculation for Irregural Polygons. 
 
+## 0.5.1 - 2015-09-XX
+### Changed
+- Use universal formula for polygon area calculation. 
+
 ## 0.5.0 - 2015-09-20
 ### Added
 - LineSegmentCollection classes and related methods in LinesFactory. 
