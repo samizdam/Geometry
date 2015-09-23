@@ -8,11 +8,4 @@ namespace samizdam\Geometry\Plane\Polygons;
  */
 class Polygon extends AbstractPolygon
 {
-
-    public function getArea()
-    {
-        return $this->getCompositeCalculator()
-            ->getCalculator(PolygonCalculatorInterface::class)
-            ->getArea($this);
-    }
 }

@@ -6,13 +6,29 @@ namespace samizdam\Geometry\Plane\Collections;
  * @author samizdam
  *        
  */
-abstract class AbstractCollection implements \Iterator, \Countable
+abstract class AbstractCollection implements CollectionInterface
 {
 
+    /**
+     * 
+     * @var \SplFixedArray
+     */
     protected $items;
+    
+    /**
+     * 
+     * (non-PHPdoc)
+     * @see \samizdam\Geometry\Plane\Collections\CollectionInterface::toArray()
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->items->toArray();
+    }
 
     /**
-     * Get number of Segments in the Collection
+     * Get number of items in the Collection
      *
      * @return number
      */
@@ -22,9 +38,9 @@ abstract class AbstractCollection implements \Iterator, \Countable
     }
 
     /**
-     * Get current LineSegment object
+     * 
      *
-     * @return LineSegmentInterface
+     * @return mixed 
      */
     public function current()
     {
@@ -32,7 +48,7 @@ abstract class AbstractCollection implements \Iterator, \Countable
     }
 
     /**
-     * Get current index of segment in Collection
+     * Get index of current item
      *
      * @return number
      */

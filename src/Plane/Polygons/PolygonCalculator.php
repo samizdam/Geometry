@@ -4,6 +4,7 @@ namespace samizdam\Geometry\Plane\Polygons;
 use samizdam\Geometry\Plane\PointInterface;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
+use samizdam\Geometry\Plane\Lines\LineSegmentInterface;
 
 /**
  *
@@ -34,5 +35,16 @@ class PolygonCalculator implements PolygonCalculatorInterface, FactoriesCollecti
             $result += ($x1 + $x2) * ($y1 - $y2);
         }
         return abs($result) / 2;
+    }
+
+    public function getLength(PolygonInterface $polygon)
+    {
+        $segments = $this->getFactoriesCollection()
+            ->getLineFactory()
+            ->createLineSegmentCollection($polygon->getPoints());
+        
+        return array_sum(array_map(function (LineSegmentInterface $segment) {
+            return $segment->getLength();
+        }, $segments->toArray()));
     }
 }
