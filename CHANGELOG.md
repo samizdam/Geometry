@@ -15,11 +15,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - New methods to PolygonInspector: check for common types of polygons. 
 - Methods for creating Incircle and Circumcircle by given Polygon (in CurveFactory?). 
 - Generated documentation.  
+- Angle::getBisector().
+- PolygonInspector::isTangential(). 
+- PolygonInspector::isCiclic().
+- Move Point to sub-package.   
+- Polar coordinates. 
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
 ## 0.5.3 - 2015-09-XX
+### Added
+
 ### Fixed
 - Collections interfaces inheritance. 
 
