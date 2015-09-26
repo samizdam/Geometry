@@ -17,6 +17,7 @@ class FactoriesCollection extends AbstractFactory implements FactoriesCollection
         Angle\AngleFactoryInterface::class => Angle\AngleFactory::class,
         Curves\CurvesFactoryInterface::class => Curves\CurvesFactory::class,
         Lines\LineFactoryInterface::class => Lines\LineFactory::class,
+        Point\PointFactoryInterface::class => Point\PointFactory::class,
         Polygons\PolygonFactoryInterface::class => Polygons\PolygonFactory::class
     ];
 
@@ -105,6 +106,11 @@ class FactoriesCollection extends AbstractFactory implements FactoriesCollection
         return $this->getFactory(Lines\LineFactoryInterface::class);
     }
 
+    public function getPointFactory()
+    {
+        return $this->getFactory(Point\PointFactoryInterface::class);
+    }
+
     /**
      *
      * (non-PHPdoc)
@@ -117,15 +123,8 @@ class FactoriesCollection extends AbstractFactory implements FactoriesCollection
         return $this->getFactory(Curves\CurvesFactoryInterface::class);
     }
 
-    /**
-     * Get point by Cartesian (Decarts) coordinates.
-     *
-     * @param float $x
-     * @param float $y
-     * @return PointInterface
-     */
-    public function getPoint($x, $y)
+    public function createPoint($x, $y)
     {
-        return new Point($x, $y);
+        return $this->getPointFactory()->createPoint($x, $y);
     }
 }

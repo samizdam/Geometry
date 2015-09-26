@@ -17,15 +17,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Generated documentation.  
 - Angle::getBisector().
 - PolygonInspector::isTangential(). 
-- PolygonInspector::isCiclic().
-- Move Point to sub-package.   
+- PolygonInspector::isCiclic().   
 - Polar coordinates. 
 
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
-## 0.5.3 - 2015-09-XX
+## 0.5.3 - 2015-09-26
 ### Added
+- PointFactory classes. 
+
+### Changed
+- Move Point to sub-package.
 
 ### Fixed
 - Collections interfaces inheritance. 

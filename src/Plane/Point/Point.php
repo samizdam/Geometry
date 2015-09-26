@@ -1,10 +1,10 @@
 <?php
-namespace samizdam\Geometry\Plane;
+namespace samizdam\Geometry\Plane\Point;
 
 /**
- * 
- * @author samizdam
  *
+ * @author samizdam
+ *        
  */
 class Point implements PointInterface
 {
@@ -13,6 +13,11 @@ class Point implements PointInterface
 
     protected $y;
 
+    /**
+     *
+     * @param float $x
+     * @param float $y
+     */
     public function __construct($x, $y)
     {
         $this->x = (float) $x;

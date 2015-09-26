@@ -1,7 +1,7 @@
 <?php
 namespace samizdam\Geometry\Plane\Curves;
 
-use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\Point\PointInterface;
 use samizdam\Geometry\Plane\Lines\LineSegmentInterface;
 
 /**

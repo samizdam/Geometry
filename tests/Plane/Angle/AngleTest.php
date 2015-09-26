@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\GeometryUnitTestCase;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
 class AngleTest extends GeometryUnitTestCase
 {

@@ -1,12 +1,14 @@
 <?php
 namespace samizdam\Geometry\Plane;
 
+use samizdam\Geometry\Plane\Point\PointFactoryInterface;
+
 /**
  *
  * @author samizdam
  *        
  */
-interface FactoriesCollectionInterface
+interface FactoriesCollectionInterface extends PointFactoryInterface
 {
 
     /**
@@ -24,16 +26,22 @@ interface FactoriesCollectionInterface
 
     /**
      *
+     * @return Point\PointFactoryInterface
+     */
+    public function getPointFactory();
+
+    /**
+     *
      * @return Polygons\PolygonFactoryInterface
      */
     public function getPolygonFactory();
 
     /**
-     * 
-     * @return Curves\CurvesFactoryInterface 
+     *
+     * @return Curves\CurvesFactoryInterface
      */
     public function getCurvesFactory();
-    
+
     /**
      *
      * @param string $interface

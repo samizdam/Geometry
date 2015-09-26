@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\Plane\Collections\AbstractCollection;
-use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\Point\PointInterface;
 use samizdam\Geometry\Exceptions;
 
 /**

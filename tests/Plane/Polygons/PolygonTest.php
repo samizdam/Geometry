@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Polygons;
 
 use samizdam\Geometry\GeometryUnitTestCase;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
 class PolygonTest extends GeometryUnitTestCase
 {
@@ -52,14 +52,14 @@ class PolygonTest extends GeometryUnitTestCase
         $polygon = AbstractPolygon::createByPoints($points);
         $this->assertEquals($points, $polygon->getPoints());
     }
-    
+
     public function testGetLength()
     {
         $polygon = AbstractPolygon::createByPoints([
             new Point(0, 0),
             new Point(0, 1),
             new Point(1, 1),
-            new Point(1, 0),
+            new Point(1, 0)
         ]);
         $this->assertEquals(4, $polygon->getLength());
     }

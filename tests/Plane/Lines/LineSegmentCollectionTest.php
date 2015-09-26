@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Lines;
 
 use samizdam\Geometry\GeometryUnitTestCase;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
 /**
  *
@@ -23,7 +23,7 @@ class LineSegmentCollectionTest extends GeometryUnitTestCase
         
         $this->assertEquals(4, count($collection));
     }
-    
+
     public function testKey()
     {
         $collection = new LineSegmentCollection([
@@ -33,8 +33,7 @@ class LineSegmentCollectionTest extends GeometryUnitTestCase
             new Point(2, 0)
         ], new LineFactory());
         
-        foreach ($collection as $key => $segment)
-        {
+        foreach ($collection as $key => $segment) {
             // do nothing: only rewind to end
         }
         $this->assertEquals(4, $collection->key());

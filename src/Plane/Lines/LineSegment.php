@@ -5,6 +5,11 @@ use samizdam\Geometry\Plane\CalculatorAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 use samizdam\Geometry\Plane\CompositeCalculatorAwareInterface;
 
+/**
+ * 
+ * @author samizdam
+ *
+ */
 class LineSegment extends AbstractLine implements LineSegmentInterface, CompositeCalculatorAwareInterface
 {
     
@@ -30,11 +35,11 @@ class LineSegment extends AbstractLine implements LineSegmentInterface, Composit
 
     public function getCentralPoint()
     {
-        list($x1, $y1, $x2, $y2) = $this->getListOfCoordinates();
+        list ($x1, $y1, $x2, $y2) = $this->getListOfCoordinates();
         
         $Cx = ($x1 + $x2) / 2;
         $Cy = ($y1 + $y2) / 2;
-        return $this->getFactoriesCollection()->getPoint($Cx, $Cy);
+        return $this->getFactoriesCollection()->createPoint($Cx, $Cy);
     }
 
     public function getListOfCoordinates()

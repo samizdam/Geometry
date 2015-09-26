@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Polygons;
 
 use samizdam\Geometry\GeometryUnitTestCase;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
 class PolygonInspectorTest extends GeometryUnitTestCase
 {
@@ -20,7 +20,7 @@ class PolygonInspectorTest extends GeometryUnitTestCase
         
         $this->assertTrue($inspector->isRegular($polygon));
     }
-    
+
     public function testIsReqularFalse()
     {
         $polygon = AbstractPolygon::createByPoints([
@@ -34,7 +34,7 @@ class PolygonInspectorTest extends GeometryUnitTestCase
         
         $this->assertFalse($inspector->isRegular($polygon));
     }
-    
+
     public function testIsReqularFalseOnRhombus()
     {
         $polygon = AbstractPolygon::createByPoints([
@@ -48,7 +48,7 @@ class PolygonInspectorTest extends GeometryUnitTestCase
         
         $this->assertFalse($inspector->isRegular($polygon));
     }
-    
+
     public function testIsTriangle()
     {
         $triangle = AbstractPolygon::createByPoints([

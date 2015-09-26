@@ -3,8 +3,13 @@ namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\GeometryUnitTestCase;
 use samizdam\Geometry\Exceptions\DomainException;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
+/**
+ *
+ * @author samizdam
+ *        
+ */
 class AngleCollectionTest extends GeometryUnitTestCase
 {
 

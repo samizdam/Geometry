@@ -1,7 +1,7 @@
 <?php
 namespace samizdam\Geometry\Plane\Angle;
 
-use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\Point\PointInterface;
 use samizdam\Geometry\Plane\PlaneGeometry;
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;

@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Lines;
 
 use samizdam\Geometry\Plane\Collections\AbstractCollection;
-use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\Point\PointInterface;
 
 /**
  *

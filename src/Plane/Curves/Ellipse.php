@@ -4,7 +4,7 @@ namespace samizdam\Geometry\Plane\Curves;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareInterface;
 use samizdam\Geometry\Plane\Lines\LineSegmentInterface;
-use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\Point\PointInterface;
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
 
 /**

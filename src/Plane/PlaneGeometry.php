@@ -4,6 +4,7 @@ namespace samizdam\Geometry\Plane;
 use samizdam\Geometry\Constants;
 use samizdam\Geometry\Plane\Lines\LineSegment;
 use samizdam\Geometry\Plane\Polygons\AbstractPolygon;
+use samizdam\Geometry\Plane\Point\PointInterface;
 
 /**
  * Facade for this package.

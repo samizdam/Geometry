@@ -3,7 +3,7 @@ namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\GeometryUnitTestCase;
 use samizdam\Geometry\Plane\Lines\LineSegment;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
 /**
  *
@@ -51,7 +51,7 @@ class EllipseTest extends GeometryUnitTestCase
         $this->assertLessThan(10, $ellipse->getFocalLength());
         $this->assertGreaterThan(0, $ellipse->getFocalLength());
     }
-    
+
     public function testGetR()
     {
         $ellipse = new Ellipse(new Point(- 7, 0), new Point(7, 0), 10);

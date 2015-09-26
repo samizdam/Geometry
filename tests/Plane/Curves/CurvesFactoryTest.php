@@ -3,9 +3,9 @@ namespace samizdam\Geometry\Plane\Curves;
 
 use samizdam\Geometry\GeometryUnitTestCase;
 use samizdam\Geometry\Plane\Lines\LineSegment;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\PointInterface;
+use samizdam\Geometry\Plane\Point\Point;
 use samizdam\Geometry\Plane\Lines\AbstractLine;
-use samizdam\Geometry\Plane\PointInterface;
 
 /**
  *
@@ -33,7 +33,7 @@ class CurvesFactoryTest extends GeometryUnitTestCase
         $factory = new CurvesFactory();
         $this->assertInstanceOf(Circle::class, $factory->createCircleByPoints(new Point(0, 0), new Point(1, 1)));
     }
-    
+
     public function testCreateEllipse()
     {
         $factory = new CurvesFactory();

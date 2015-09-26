@@ -2,11 +2,12 @@
 namespace samizdam\Geometry\Plane;
 
 use samizdam\Geometry\GeometryUnitTestCase;
+use samizdam\Geometry\Plane\Point\Point;
 
 /**
- * 
- * @author samizdam
  *
+ * @author samizdam
+ *        
  */
 class PlaneGeometryTest extends GeometryUnitTestCase
 {

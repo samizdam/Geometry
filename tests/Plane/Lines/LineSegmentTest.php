@@ -2,7 +2,7 @@
 namespace samizdam\Geometry\Plane\Lines;
 
 use samizdam\Geometry\GeometryUnitTestCase;
-use samizdam\Geometry\Plane\Point;
+use samizdam\Geometry\Plane\Point\Point;
 
 class LineSegmentTest extends GeometryUnitTestCase
 {

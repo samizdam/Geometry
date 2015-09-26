@@ -1,7 +1,7 @@
 <?php
 namespace samizdam\Geometry\Plane\Angle;
 
-use samizdam\Geometry\Plane\PointInterface;
+use samizdam\Geometry\Plane\Point\PointInterface;
 
 /**
  *
