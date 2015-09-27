@@ -5,6 +5,7 @@ use samizdam\Geometry\GeometryUnitTestCase;
 
 class AngleSizeCalculatorTest extends GeometryUnitTestCase
 {
+
     public function testAngleSizeUnitAccessors()
     {
         $calc = new AngleSizeCalculator();

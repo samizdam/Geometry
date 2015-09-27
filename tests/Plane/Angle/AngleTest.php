@@ -48,4 +48,13 @@ class AngleTest extends GeometryUnitTestCase
         $angle = new Angle($A, $B, $C);
         $this->assertEquals($B, $angle->getVertexPoint());
     }
+
+    public function testGetValueInUnits()
+    {
+        $A = new Point(0, 1);
+        $B = new Point(1, 1);
+        $C = new Point(1, 0);
+        $angle = new Angle($A, $B, $C);
+        $this->assertInstanceOf(AngleSizeInterface::class, $angle->getSizeInUnits());
+    }
 }

@@ -18,6 +18,6 @@ class AngleSizeUnit implements AngleSizeUnitsEnum
 
     public function getTypeName()
     {
-        return $this->getTypeName();
+        return $this->type;
     }
 }
