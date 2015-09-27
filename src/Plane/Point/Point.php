@@ -1,6 +1,8 @@
 <?php
 namespace samizdam\Geometry\Plane\Point;
 
+use samizdam\Geometry\Constants;
+
 /**
  *
  * @author samizdam
@@ -9,9 +11,13 @@ namespace samizdam\Geometry\Plane\Point;
 class Point implements PointInterface
 {
 
-    protected $x;
+    private $x;
 
-    protected $y;
+    private $y;
+
+    private $angular;
+
+    private $r;
 
     /**
      *
@@ -26,7 +32,7 @@ class Point implements PointInterface
 
     public static function createByPolarCoords($r, $angular)
     {
-        if ($angular === (1 / 2) * M_PI || $angular === 3 * M_PI / 2) {
+        if ($angular === (1 / 2) * Constants::π || $angular === 3 * Constants::π / 2) {
             $x = 0;
         } else {
             $x = $r * cos($angular);
@@ -34,7 +40,19 @@ class Point implements PointInterface
         
         $y = $r * sin($angular);
         $point = new self($x, $y);
+        $point->angular = $angular;
+        $point->r = $r;
         return $point;
+    }
+
+    public function getAngular()
+    {
+        return $this->angular ?  : $this->angular = atan2($this->y, $this->x);
+    }
+
+    public function getR()
+    {
+        return $this->r ?  : $this->r = sqrt(pow($this->y, 2) + pow($this->x, 2));
     }
 
     public function getX()
