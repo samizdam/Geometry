@@ -55,15 +55,18 @@ class AngleSizeCalculator implements AngleSizeCalculatorInterface
         $y1 = $coordSumBCy;
         $y2 = $coordSumBAy;
         
-        $rads = atan2($x1 * $y2 - $y1 * $x2, $x1 * $x2 + $y1 * $y2);
+        $res = $rads = atan2($x1 * $y2 - $y1 * $x2, $x1 * $x2 + $y1 * $y2);
         
-        $res = rad2deg($rads);
-        
-        if ($res < 0) {
-            $res = $res + 360;
-        }
         if (empty($angleSizeUnit)) {
             $angleSizeUnit = $this->getAngleSizeUnit();
+        }
+        
+        if ($angleSizeUnit->getTypeName() === AngleSizeUnitsEnum::DEG) {
+            $res = rad2deg($rads);
+            
+            if ($res < 0) {
+                $res = $res + 360;
+            }
         }
         
         return new AngleSize($angleSizeUnit, $res);

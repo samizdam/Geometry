@@ -2,6 +2,7 @@
 namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\GeometryUnitTestCase;
+use samizdam\Geometry\Plane\Point\Point;
 
 class AngleSizeCalculatorTest extends GeometryUnitTestCase
 {
@@ -16,5 +17,18 @@ class AngleSizeCalculatorTest extends GeometryUnitTestCase
         
         $calc->setAngleSizeUnit($unit);
         $this->assertEquals($unit, $calc->getAngleSizeUnit());
+    }
+
+    public function testAngleSizeInRad()
+    {
+        $calc = new AngleSizeCalculator();
+        list ($A, $B, $C) = [
+            new Point(0, 0),
+            new Point(1, 0),
+            new Point(1, 1)
+        ];
+        $angle = new Angle($A, $B, $C);
+        $this->assertEquals(pi() / 2, $calc->getAngleSize($angle, new AngleSizeUnit(AngleSizeUnitsEnum::RAD))
+            ->getValue());
     }
 }
