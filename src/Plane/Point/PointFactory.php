@@ -15,4 +15,9 @@ class PointFactory extends AbstractFactory implements PointFactoryInterface
     {
         return new Point($x, $y);
     }
+
+    public function createPointByPolarCoords($r, $angular)
+    {
+        return Point::createByPolarCoords($r, $angular);
+    }
 }

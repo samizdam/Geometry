@@ -23,6 +23,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
+## 0.5.4 - 2015-09-XX
+### Added
+- create point by polar coordinates. 
+
+
 ## 0.5.3 - 2015-09-26
 ### Added
 - PointFactory classes. 

@@ -26,4 +26,10 @@ class FactoriesCollectionTest extends GeometryUnitTestCase
         $this->setExpectedException(Exceptions\InvalidArgumentException::class);
         $collection->setFactory(AngleFactoryInterface::class, \stdClass::class);
     }
+
+    public function testCreatePointByPolarCoords()
+    {
+        $collection = new FactoriesCollection();
+        $this->assertInstanceOf(Point\PointInterface::class, $collection->createPointByPolarCoords(1, 1));
+    }
 }

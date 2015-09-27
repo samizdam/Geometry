@@ -6,7 +6,7 @@ use samizdam\Geometry\Exceptions as Exceptions;
 /**
  *
  * @author samizdam
- *        
+ *
  */
 class FactoriesCollection extends AbstractFactory implements FactoriesCollectionInterface
 {
@@ -43,7 +43,7 @@ class FactoriesCollection extends AbstractFactory implements FactoriesCollection
             if (! $this->objectPool->offsetExists($interface)) {
                 $this->setFactory($interface, $this->classMap[$interface]);
             }
-            
+
             return $this->objectPool->offsetGet($interface);
         } else {
             throw new Exceptions\OutOfBoundsException("Unknow factory interface {$interface}");
@@ -126,5 +126,10 @@ class FactoriesCollection extends AbstractFactory implements FactoriesCollection
     public function createPoint($x, $y)
     {
         return $this->getPointFactory()->createPoint($x, $y);
+    }
+
+    public function createPointByPolarCoords($r, $angular)
+    {
+        return $this->getPointFactory()->createPointByPolarCoords($r, $angular);
     }
 }
