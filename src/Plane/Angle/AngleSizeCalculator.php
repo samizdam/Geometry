@@ -21,10 +21,12 @@ class AngleSizeCalculator implements AngleSizeCalculatorInterface
 
     public function getAngleSizeUnit()
     {
-        return $this->angleSizeUnit ?  : $this->angleSizeUnit = $this->getFactoriesCollection()->getAngleFactory()->getDefaultUnit();
+        return $this->angleSizeUnit ?  : $this->angleSizeUnit = $this->getFactoriesCollection()
+            ->getAngleFactory()
+            ->getDefaultUnit();
     }
 
-    public function getAngleSize(AngleInterface $angle)
+    public function getAngleSize(AngleInterface $angle, AngleSizeUnitsEnum $angleSizeUnit = null)
     {
         $BA = $angle->getFirstVector();
         $BC = $angle->getLastVector();
@@ -60,6 +62,10 @@ class AngleSizeCalculator implements AngleSizeCalculatorInterface
         if ($res < 0) {
             $res = $res + 360;
         }
-        return $res;
+        if (empty($angleSizeUnit)) {
+            $angleSizeUnit = $this->getAngleSizeUnit();
+        }
+        
+        return new AngleSize($angleSizeUnit, $res);
     }
 }

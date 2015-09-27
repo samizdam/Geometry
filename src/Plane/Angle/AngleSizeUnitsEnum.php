@@ -14,4 +14,10 @@ interface AngleSizeUnitsEnum
     const DEG = 'degree';
 
     const RAD = 'radian';
+
+    /**
+     *
+     * @return string
+     */
+    public function getTypeName();
 }

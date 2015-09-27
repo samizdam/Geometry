@@ -50,11 +50,17 @@ class Angle implements AngleInterface
             ->createLineSegment($this->B, $this->C);
     }
 
-    public function getSize()
+    public function getSize($unitTypeName = AngleSizeUnitsEnum::DEFAULT_TYPE)
+    {
+        $angleSizeUnit = new AngleSizeUnit($unitTypeName);
+        return $this->getSizeInUnits($angleSizeUnit)->getValue();
+    }
+
+    public function getSizeInUnits(AngleSizeUnitsEnum $angleSizeUnit = null)
     {
         return $this->getCompositeCalculator()
             ->getCalculator(AngleSizeCalculatorInterface::class)
-            ->getAngleSize($this);
+            ->getAngleSize($this, $angleSizeUnit);
     }
 
     public function getVertexPoint()

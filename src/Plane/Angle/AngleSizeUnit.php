@@ -2,9 +2,9 @@
 namespace samizdam\Geometry\Plane\Angle;
 
 /**
- * 
- * @author samizdam
  *
+ * @author samizdam
+ *        
  */
 class AngleSizeUnit implements AngleSizeUnitsEnum
 {
@@ -13,6 +13,11 @@ class AngleSizeUnit implements AngleSizeUnitsEnum
 
     public function __construct($type = AngleSizeUnitsEnum::DEFAULT_TYPE)
     {
-        $this->type = $type;
+        $this->type = (string) $type;
+    }
+
+    public function getTypeName()
+    {
+        return $this->getTypeName();
     }
 }
