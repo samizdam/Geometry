@@ -23,9 +23,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Normalize naming of arguments, fields and methods. To fix in some guideline.
 
-## 0.5.5 - 2015-09-XX
+## 0.5.5 - 2015-09-28
 ### Added
-- AngleSize classes (value object) and typed getters. 
+- AngleSize classes (value object) and typed getters. Support for Radians and Degrees.  
 
 ## 0.5.4 - 2015-09-27
 ### Added
