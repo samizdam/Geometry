@@ -4,6 +4,7 @@ namespace samizdam\Geometry\Plane\Lines;
 use samizdam\Geometry\Plane\Point\PointInterface;
 
 /**
+ * Euclidean Vector variation.
  *
  * @author samizdam
  *        
@@ -26,7 +27,7 @@ interface LineSegmentInterface extends LineInterface
     public function getLastPoint();
 
     /**
-     * Calc circumference
+     * Calc modulus of Vector
      *
      * @return float
      */
@@ -41,6 +42,7 @@ interface LineSegmentInterface extends LineInterface
 
     /**
      * Get list of coorginate: x1, y1, x2, y1
+     *
      * @return array
      */
     public function getListOfCoordinates();

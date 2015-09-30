@@ -2,7 +2,6 @@
 namespace samizdam\Geometry\Plane\Angle;
 
 use samizdam\Geometry\Plane\Point\PointInterface;
-use samizdam\Geometry\Plane\PlaneGeometry;
 use samizdam\Geometry\Plane\CalculatorAwareTrait;
 use samizdam\Geometry\Plane\FactoriesCollectionAwareTrait;
 
@@ -23,7 +22,9 @@ class Angle implements AngleInterface
     private $A, $B, $C;
 
     /**
-     * Second point is Vertex of Angle
+     *
+     * Create Angle based on 2 Vectors from 3 points.
+     * Second point is a Vertex of Angle and first Point for Vectors.
      *
      * @param PointInterface $A
      * @param PointInterface $B
