@@ -12,7 +12,7 @@ install:
   - travis_retry composer install --no-interaction --prefer-source
 
 script:
-  - phpunit --configuration tests/travis-phpunit.xml tests/
+  - phpunit --coverage-clover build/logs/clover.xml tests/
 
 after_script:
   - vendor/bin/test-reporter

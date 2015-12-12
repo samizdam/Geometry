@@ -1,4 +1,13 @@
+# IDE
+## Eclipse 
 .project
 .buildpath
 .settings/
+
+# Composer 
+## Vendors
 /vendor/
+
+# Tests
+phpunit.xml
+/tests/_coverage/
