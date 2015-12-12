@@ -14,30 +14,30 @@ class AngleCollection extends AbstractCollection implements AngleCollectionInter
 {
 
     /**
-     * Note: angle will be construct from given points clockwise on Cartesian 2D system! 
-     * Geometry library, by default, use full positive circle for present angle value: from 0 to 360 degrees. 
+     * Note: angle will be construct from given points anticlockwise on Cartesian 2D system!
+     * Geometry library, by default, use full positive circle for present angle value: from 0 to 360 degrees.
      * For some cases, angle can be greater than 180, not negative!
-     *  
-     * For example: if points presents as [A, B, C] (middle point is vertex), angle size is 270 deg for this case  
-     *   B>____C 
-     *   |
-     *   |  270
-     *   |
-     *  ^A
-     *  
-     *  For create rigth (90) angle you must allow this order: 
-     *  
-     *   A
-     *   |
-     *   |   90
-     *   |
-     *   B>_____C
      *
-     *   Or this: 
-     *   
-     *   
-     *  
-     * 
+     * For example: if points presents as [A, B, C] (middle point is vertex), angle size is 270 deg for this case
+     * B>____C
+     * |
+     * | 270
+     * |
+     * ^A
+     *
+     * For create rigth (90) angle you must allow this order:
+     *
+     * A
+     * |
+     * | 90
+     * |
+     * B>_____C
+     *
+     * Or this:
+     *
+     *
+     *
+     *
      * @param PointInterface[] $points
      * @param AngleFactoryInterface $angleFactory
      */
